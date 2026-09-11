@@ -46,49 +46,6 @@ The comparison rows are taken from the [MemoryAgentBench FactConsolidation resul
 
 ---
 
-## 🚀 How to Run & Verify in 60 Seconds (No Coding Required)
-
-You do **not** need any specialized programming environment. All you need is standard **Python** (which comes pre-installed on most computers).
-
-### Step 1: Open your Terminal / Command Prompt
-- **Windows**: Press `Win + R`, type `cmd`, and press Enter.
-- **Mac / Linux**: Open the `Terminal` app.
-
-### Step 2: Copy and Paste These Commands
-
-```bash
-# 1. Download this repository
-git clone https://github.com/syntarus12/evals.git
-
-# 2. Enter the directory
-cd evals
-
-# 3. Run the official automated verification
-python scripts/score_factconsolidation.py
-```
-
-### What You Will See on Your Screen:
-
-```text
-[OK] Verified official dataset SHA256: f2cdfb17cf56bcb3...
-
-=======================================================
- Official FactConsolidation (MemoryAgentBench) Scoring 
-=======================================================
-
-Subset                       | Score      | Accuracy  
--------------------------------------------------------
-Multi-Hop (6K)               |   8/100    |   8.00%
-Single-Hop (6K)              |  34/100    |  34.00%
--------------------------------------------------------
-Overall Benchmark            |  42/200    |  21.00%
-=======================================================
-```
-
-That's it! In under 5 seconds, the script checks the cryptographic checksum of the official dataset and recalculates the scores for all 200 questions.
-
----
-
 ## 🔍 Total Transparency: Inspect Any Question Yourself
 
 Unlike benchmarks that only show high-level numbers, **every single question, prediction, and gold answer is open for public audit**:

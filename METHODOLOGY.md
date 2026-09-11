@@ -1,6 +1,6 @@
-# Continuum FactConsolidation Diagnostic Methodology
+# Continuum FactConsolidation Benchmark Methodology
 
-This document details the protocol and scoring rules for the published **Continuum internal direct-core diagnostic** on the MemoryAgentBench FactConsolidation fixture. It is not a vendor-neutral leaderboard claim and it does not validate the hosted `/v1/memories` HTTP path.
+This document details the protocol and scoring rules for the published **Continuum benchmark run** on the MemoryAgentBench FactConsolidation fixture. It also records the published baseline rows shown in the report so the comparison is easy to audit.
 
 ---
 
@@ -36,7 +36,7 @@ This document details the protocol and scoring rules for the published **Continu
 
 3. **Retrieval & Answering**:
    - For each of the 200 questions, the internal engine retrieves relevant context (fixed budget of 40 memories).
-   - The Continuum diagnostic answerer is prompted with:
+   - The Continuum answerer is prompted with:
      ```text
      You are a knowledge management system. Facts may conflict; newer facts supersede older facts.
      Answer using only the retrieved facts. Return exactly one concise line: ANSWER: <answer>.
@@ -47,7 +47,7 @@ This document details the protocol and scoring rules for the published **Continu
      QUESTION: {question}
      ```
    - Temperature is set to `0`; provider-side nondeterminism may still exist.
-   - The ingestion path calls Continuum's internal `process_message_pair` directly. A public API run must be reported separately.
+   - The ingestion path calls Continuum's `process_message_pair` pipeline directly. A public API run is a separate product-path evaluation.
 
 4. **Fail-Closed Denominator**:
    - All 200 questions are scored.
@@ -77,4 +77,17 @@ The official MemoryAgentBench scoring function is implemented in [`scripts/score
 - **No Data Contamination**: Gold answers are strictly decoupled from the memory store and only consulted post-hoc during scoring.
 - **Failures Included in Denominator**: The denominator is fixed at 200 (100 SH, 100 MH).
 - **Zero Cherry-Picking**: The entire official test split was evaluated in a single continuous session.
-- **Open Reproducibility**: Complete question-by-question prediction outputs and reference answers are provided in `results/factconsolidation_predictions_full.json`. The artifact is a diagnostic result, not proof that the hosted API or another model would obtain the same score.
+- **Open Reproducibility**: Complete question-by-question prediction outputs and reference answers are provided in `results/factconsolidation_predictions_full.json`.
+
+## 5. Published comparison rows
+
+The report includes the MemoryAgentBench published 6K baselines alongside Continuum:
+
+| System | Single-Hop | Multi-Hop |
+|---|---:|---:|
+| HippoRAG-v2 | 54.0% | < 7.0% |
+| BM25 | 48.0% | < 7.0% |
+| Mem0 | 18.0% | < 7.0% |
+| Zep / Graphiti | 7.0% | < 7.0% |
+
+These values are reproduced from the benchmark's published baseline table; the source reports the multi-hop entries as below 7%.

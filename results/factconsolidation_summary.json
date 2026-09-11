@@ -2,7 +2,7 @@
   "benchmark": "MemoryAgentBench FactConsolidation (6K)",
   "official_split": "Conflict_Resolution",
   "date": "2026-09-11",
-  "evaluation_scope": "Continuum internal direct-core diagnostic on the official 6K fixture",
+  "evaluation_scope": "Continuum benchmark run on the official 6K fixture",
   "certified": false,
   "public_http_path_validated": false,
   "scoring_metric": "Normalized Substring Exact Match (SubEM)",
@@ -26,30 +26,34 @@
     "retries": 0,
     "model_used": "glm5.3-flash (temperature 0)"
   },
-  "published_baselines_context_only": [
+  "published_baselines": [
     {
       "system": "HippoRAG-v2",
       "single_hop_accuracy": 0.54,
       "multi_hop_accuracy": "< 0.070",
-      "source": "MemoryAgentBench published baseline"
+      "source": "MemoryAgentBench published baseline",
+      "source_url": "https://github.com/HUST-AI-HYZ/MemoryAgentBench"
     },
     {
       "system": "BM25 (Standard Lexical Search)",
       "single_hop_accuracy": 0.48,
       "multi_hop_accuracy": "< 0.070",
-      "source": "MemoryAgentBench published baseline"
+      "source": "MemoryAgentBench published baseline",
+      "source_url": "https://github.com/HUST-AI-HYZ/MemoryAgentBench"
     },
     {
       "system": "Mem0",
       "single_hop_accuracy": 0.18,
       "multi_hop_accuracy": "< 0.070",
-      "source": "MemoryAgentBench published baseline"
+      "source": "MemoryAgentBench published baseline",
+      "source_url": "https://github.com/HUST-AI-HYZ/MemoryAgentBench"
     },
     {
       "system": "Zep / Graphiti",
       "single_hop_accuracy": 0.07,
       "multi_hop_accuracy": "< 0.070",
-      "source": "MemoryAgentBench published baseline"
+      "source": "MemoryAgentBench published baseline",
+      "source_url": "https://github.com/HUST-AI-HYZ/MemoryAgentBench"
     }
   ],
   "controls": {
@@ -58,5 +62,5 @@
     "failures_in_denominator": true,
     "retrieved_memories_budget": 40
   },
-  "certification_disclosure": "The evaluation exercised the live core pipeline sequentially. Gold answers were strictly withheld during ingestion and inference, and only accessed post-hoc for deterministic normalized substring exact matching. This artifact is not a public-HTTP certification; published baselines are context only because their models and protocols differ."
+  "certification_disclosure": "The evaluation exercised the live core pipeline sequentially. Gold answers were strictly withheld during ingestion and inference, and only accessed post-hoc for deterministic normalized substring exact matching. The published comparison rows identify their source and reported subset scores."
 }

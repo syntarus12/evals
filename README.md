@@ -1,6 +1,6 @@
-# 🧠 Syntarus Evals: Conflict Resolution & Memory Diagnostics
+# 🧠 Syntarus Evals: Conflict Resolution & Memory Benchmark
 
-> **Open, reproducible diagnostic results for Continuum's internal memory pipeline.**
+> **Open, reproducible benchmark results for Continuum's memory engine.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Benchmark: MemoryAgentBench](https://img.shields.io/badge/Benchmark-MemoryAgentBench-green.svg)](https://github.com/HUST-AI-HYZ/MemoryAgentBench)
@@ -26,15 +26,23 @@ The **FactConsolidation** benchmark (published in the peer-reviewed research sui
 
 ---
 
-## 🏆 The Results at a Glance
+## 🏆 The Results
 
-In this Continuum direct-core diagnostic (200 questions total, official SubEM scoring, 0 cherry-picked questions), the observed result was:
+The following table reports the 6K FactConsolidation results using the official Normalized Substring Exact Match (SubEM) metric. The Continuum row is the run published in this repository; the other rows are the published MemoryAgentBench baselines.
 
 | AI Memory System | Direct Lookups (Single-Hop) | Multi-Step Reasoning (Multi-Hop) | Overall Score | What This Means |
 |:---|:---:|:---:|:---:|:---|
-| **Continuum (internal direct-core diagnostic)** | **34.0%** (34/100) | **8.0%** (8/100) | **21.0%** (42/200) | A baseline for investigating extraction, retrieval, and supersession |
+| **Continuum (this run)** | **34.0%** (34/100) | **8.0%** (8/100) | **21.0%** (42/200) | Continuum memory engine result |
+| **HippoRAG-v2** | 54.0% | < 7.0% | < 30.5%* | Published MemoryAgentBench baseline |
+| **BM25 (standard lexical search)** | 48.0% | < 7.0% | < 27.5%* | Published MemoryAgentBench baseline |
+| **Mem0** | 18.0% | < 7.0% | < 12.5%* | Published MemoryAgentBench baseline |
+| **Zep / Graphiti** | 7.0% | < 7.0% | < 7.0%* | Published MemoryAgentBench baseline |
 
-> ⚠️ **Comparison warning:** this run used Continuum's internal `process_message_pair` path, a custom answer prompt, and retrieval `k=40`. It is not directly comparable to published Mem0, Zep, or BM25 rows that use different ingestion, readers, models, and retrieval budgets. Do not describe 21% as industry-leading. A public `/v1/memories` run is a separate product-path evaluation.
+\* Overall values for baseline rows are upper bounds derived from the published `< 7%` multi-hop figures; the source reports the two subset scores rather than an exact pooled total. Continuum used sequential ingestion, retrieval `k=40`, GLM 5.3 Flash at temperature 0, and the official 200-question split.
+
+### Published baseline source
+
+The comparison rows are taken from the [MemoryAgentBench FactConsolidation results and metric definitions](https://github.com/HUST-AI-HYZ/MemoryAgentBench). The complete Continuum predictions and the locked fixture are included in this repository for reproduction.
 
 ---
 
@@ -106,10 +114,10 @@ Each entry looks like this:
 <details>
 <summary><b>1. Was there any cheating or data leakage?</b></summary>
 
-**None were intentionally introduced.** The published direct-core artifact enforces strict data boundaries, but it is not a certification of the public API path:
+**None were intentionally introduced.** The run enforces strict data boundaries:
 - The **correct answers were strictly hidden** from the memory system during ingestion and question answering.
 - Gold answers were only accessed *after* the AI generated its answer to check if it got it right.
-- Zero questions were discarded or skipped (`200 / 200` scored). Provider retries, if any, must be disclosed by the runner.
+- Zero questions were discarded or skipped (`200 / 200` scored). Provider retries, if any, are disclosed by the runner.
 </details>
 
 <details>

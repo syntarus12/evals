@@ -1,0 +1,66 @@
+{
+  "benchmark": "MemoryAgentBench FactConsolidation (6K)",
+  "official_split": "Conflict_Resolution",
+  "date": "2026-09-11",
+  "evaluation_scope": "Official 6K Single-Hop and Multi-Hop subsets",
+  "scoring_metric": "Normalized Substring Exact Match (SubEM)",
+  "syntarus_results": {
+    "overall_accuracy": 0.21,
+    "total_questions": 200,
+    "total_correct": 42,
+    "subsets": {
+      "single_hop_6k": {
+        "questions": 100,
+        "correct": 34,
+        "accuracy": 0.34
+      },
+      "multi_hop_6k": {
+        "questions": 100,
+        "correct": 8,
+        "accuracy": 0.08
+      }
+    },
+    "transport_failures": 0,
+    "retries": 0,
+    "model_used": "glm5.3-flash (temperature 0)"
+  },
+  "industry_comparison": [
+    {
+      "system": "HippoRAG-v2",
+      "single_hop_accuracy": 0.54,
+      "multi_hop_accuracy": "< 0.070",
+      "source": "MemoryAgentBench published baseline"
+    },
+    {
+      "system": "BM25 (Standard Lexical Search)",
+      "single_hop_accuracy": 0.48,
+      "multi_hop_accuracy": "< 0.070",
+      "source": "MemoryAgentBench published baseline"
+    },
+    {
+      "system": "Syntarus (Continuum Memory)",
+      "single_hop_accuracy": 0.34,
+      "multi_hop_accuracy": 0.08,
+      "source": "Syntarus official run (this repository)"
+    },
+    {
+      "system": "Mem0",
+      "single_hop_accuracy": 0.18,
+      "multi_hop_accuracy": "< 0.070",
+      "source": "MemoryAgentBench published baseline"
+    },
+    {
+      "system": "Zep / Graphiti",
+      "single_hop_accuracy": 0.07,
+      "multi_hop_accuracy": "< 0.070",
+      "source": "MemoryAgentBench published baseline"
+    }
+  ],
+  "controls": {
+    "gold_answers_visible_to_engine": false,
+    "sequential_fact_ingestion": true,
+    "failures_in_denominator": true,
+    "retrieved_memories_budget": 40
+  },
+  "certification_disclosure": "The evaluation exercised the live core pipeline sequentially. Gold answers were strictly withheld during ingestion and inference, and only accessed post-hoc for deterministic normalized substring exact matching."
+}

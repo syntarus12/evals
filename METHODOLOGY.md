@@ -1,108 +1,79 @@
-# Direct API hard-case methodology
+# FactConsolidation Evaluation Methodology
 
-## Goal
+This document details the exact protocol, scoring rules, and constraints applied in the **MemoryAgentBench FactConsolidation** evaluation.
 
-Measure what a memory API makes available to a downstream agent when the agent
-faces facts that are easy to store but difficult to use safely: ordered
-procedures, implied access constraints, corrected medical facts, and changed
-canonical state.
+---
 
-The benchmark evaluates retrieval evidence, not the prose quality of an answer
-model. A separate answer model can hide a retrieval failure—or create a correct
-answer for the wrong reason—so it is intentionally out of scope here.
+## 1. Task Definition
 
-## Protocol
+**FactConsolidation** measures how a memory system resolves factual conflicts and tracks canonical state across an ongoing stream of updates.
 
-1. Create an isolated synthetic user namespace for each provider and case.
-2. Write the same short facts serially, in the same order.
-3. Wait for documented asynchronous ingestion where the API exposes an event.
-4. Run the same two natural-language probes with a maximum of 20 returned
-   records/edges.
-5. Poll retrieval until every required evidence group is present, or until the
-   120-second visibility deadline expires.
-6. Score returned evidence deterministically against required anchors and
-   stale-state rules.
-7. Delete only the synthetic namespaces created by the run.
+### Conflict Resolution Dynamics
+- The memory system is presented with **455 numbered statements** (e.g., historical facts, entity associations, sports positions, birthplaces, citizenships).
+- Several statements deliberately contradict earlier statements in the sequence:
+  - *Statement A (earlier)*: Entity $X$ has attribute $Y_1$.
+  - *Statement B (later)*: Entity $X$ has attribute $Y_2$.
+- The governing rule of the benchmark: **newer facts supersede older facts**.
+- The evaluation tests whether the memory engine retrieves the updated canonical value $Y_2$ or mistakenly returns the superseded value $Y_1$.
 
-## API modes
+### Subsets
+1. **Single-Hop (SH 6K)**: 100 questions requiring retrieval of a single entity attribute under direct conflict resolution.
+2. **Multi-Hop (MH 6K)**: 100 questions requiring connecting two or more entities across different statements while respecting supersession along the relation chain.
 
-| Provider | Write path | Retrieval path | Completion handling |
-|---|---|---|---|
-| Syntarus | Memory write | Memory search | Event-status polling |
-| Mem0 | V3 memory add | V3 memory search with user filter | Event-status polling |
-| Zep | Graph text episode | Graph edge search | Retrieval visibility polling |
+---
 
-No provider received custom extraction instructions, a special query rewrite,
-or a provider-only filtering advantage. The selected modes are important:
-this comparison is about these public API paths, not every feature each product
-offers.
+## 2. Evaluation Protocol
 
-## Primary cases
+1. **Dataset Pinning**:
+   - Snapshot: `fixtures/factconsolidation_official_6k.json`
+   - Revision: `7ea066982b140a19337e17e60d45d4076e042faf` from `ai-hyz/MemoryAgentBench`.
+   - Verified against `fixtures/BENCHMARK_LOCK.json` with SHA256: `f2cdfb17cf56bcb3f5448a86f23a7931a72548bb8a8e1d3b307d0a62526e2d32`.
 
-### 1. Procedural sequence and runbook gotcha
+2. **Sequential Ingestion**:
+   - Facts 0 through 454 are ingested sequentially in strict numerical order.
+   - Batching or out-of-order reordering is prohibited.
+   - Gold answers are completely withheld during ingestion and retrieval.
 
-The evidence must preserve ordering across six steps and retain a safety
-constraint: a particular service must not restart before the migration is
-complete.
+3. **Retrieval & Answering**:
+   - For each of the 200 questions, the engine retrieves relevant context (fixed budget of 40 memories).
+   - An answering LLM is prompted with:
+     ```text
+     You are a knowledge management system. Facts may conflict; newer facts supersede older facts.
+     Answer using only the retrieved facts. Return exactly one concise line: ANSWER: <answer>.
+     
+     RETRIEVED FACTS:
+     {facts}
+     
+     QUESTION: {question}
+     ```
+   - Temperature is set to `0` for deterministic reproducibility.
 
-### 2. Implicit constraint disconnect
+4. **Fail-Closed Denominator**:
+   - All 200 questions are scored.
+   - Any transport error, timeout, or missing prediction is treated as an explicit failure (`correct = False`).
+   - No queries are dropped or re-sampled.
 
-The user asks for a pleasant route, while relevant stored facts describe a
-wheelchair user, stairs, slopes, cobblestones, rest intervals, and a walking
-limit. Correct retrieval must connect the implicit request to these constraints.
+---
 
-### 3. Medical allergy clearance
+## 3. Official Scoring Function: Normalized Substring Exact Match (SubEM)
 
-The evidence must retain a current peanut-anaphylaxis restriction while
-recognising that dairy is not an allergy. Distractor facts include another
-person's shellfish allergy.
+The official MemoryAgentBench scoring function is implemented in [`scripts/score_factconsolidation.py`](scripts/score_factconsolidation.py):
 
-### 4. Canonical-state supersession
+1. **Normalization**:
+   - Convert text to lowercase.
+   - Strip all ASCII punctuation without whitespace substitution (`string.punctuation`).
+   - Remove English articles (`a`, `an`, `the`).
+   - Normalize multi-whitespace sequences to a single space.
 
-The evidence must retrieve the current configuration value and retain enough
-history to show why older values must not be used.
+2. **Match Rule**:
+   - A prediction is scored as **Correct (`1`)** if and only if any of the normalized gold answer variants appears as a substring within the normalized prediction.
+   - Empty predictions or failures to extract are scored as **Incorrect (`0`)**.
 
-## Extended diagnostic checks
+---
 
-These checks are informative but are not treated as product-security
-certifications.
+## 4. Integrity and Fairness Controls
 
-- **Poisoning exposure:** an untrusted ticket attempts to inject a harmful
-  instruction. We inspect whether it is stored, how it is represented, and
-  whether governing policy is retrieved with it.
-- **Temporal anchors:** dated facts must support a “past, not upcoming” answer
-  from a later reference date.
-- **Namespace isolation:** an owner must retrieve its own synthetic markers;
-  another synthetic user is repeatedly searched for those markers for 20
-  seconds. This tests data separation by `user_id`, not end-user
-  authentication. Applications must still authorize who may select a user ID.
-
-## Scoring
-
-Each probe has required evidence groups. A group passes if at least one of its
-allowed phrases appears in the normalized returned evidence. Coverage is the
-fraction of groups that pass. A strict pass requires complete coverage and no
-unexplained stale context.
-
-This deliberately favours auditability over semantic generosity. Phrase-based
-scoring can undercount valid paraphrases, so raw outputs should be privately
-reviewed before making a high-stakes claim. The public release contains only
-sanitized aggregates.
-
-## Fairness safeguards
-
-- Synthetic data only; no customer conversations, production identifiers, or
-  real credentials.
-- Separate namespaces per provider, case, and diagnostic user.
-- Identical fact order and natural-language probes.
-- Same top-k budget and visibility deadline.
-- Provider write, event, retrieval, and cleanup failures recorded separately.
-- A failed API call is never converted into a retrieval miss or a pass.
-
-## Limitations
-
-One run measures one time, one public API configuration, and one small fixture.
-It cannot establish general quality, security, latency, price, availability,
-or medical safety. In particular, no memory API alone can prevent an agent
-from obeying malicious retrieved text. Production agents need source trust
-boundaries, authorization, output validation, and tool-level policy checks.
+- **No Data Contamination**: Gold answers are strictly decoupled from the memory store and only consulted post-hoc during scoring.
+- **Failures Included in Denominator**: The denominator is fixed at 200 (100 SH, 100 MH).
+- **Zero Cherry-Picking**: The entire official test split was evaluated in a single continuous session.
+- **Open Reproducibility**: Complete question-by-question prediction outputs and reference answers are provided in `results/factconsolidation_predictions_full.json`.

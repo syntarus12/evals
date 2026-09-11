@@ -1,6 +1,6 @@
-# 🧠 Syntarus Evals: Conflict Resolution & Memory Benchmark
+# 🧠 Syntarus Evals: Conflict Resolution & Memory Diagnostics
 
-> **Official, open evaluation results proving how Syntarus outperforms competitors when information changes and old facts must be updated.**
+> **Open, reproducible diagnostic results for Continuum's internal memory pipeline.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Benchmark: MemoryAgentBench](https://img.shields.io/badge/Benchmark-MemoryAgentBench-green.svg)](https://github.com/HUST-AI-HYZ/MemoryAgentBench)
@@ -28,18 +28,13 @@ The **FactConsolidation** benchmark (published in the peer-reviewed research sui
 
 ## 🏆 The Results at a Glance
 
-In this official evaluation (200 questions total, official strict scoring, 0 cherry-picked questions), **Syntarus significantly outperformed popular competitors**:
+In this Continuum direct-core diagnostic (200 questions total, official SubEM scoring, 0 cherry-picked questions), the observed result was:
 
 | AI Memory System | Direct Lookups (Single-Hop) | Multi-Step Reasoning (Multi-Hop) | Overall Score | What This Means |
 |:---|:---:|:---:|:---:|:---|
-| 🥇 **Syntarus (Continuum)** | **34.0%** (34/100) | **8.0%** (8/100) | **21.0%** (42/200) | **Top-tier state supersession & graph retrieval** |
-| 🥈 **Mem0** | 18.0% | < 7.0% | ~12.5% | Stuggles when facts update; frequently returns stale data |
-| 🥉 **Zep / Graphiti** | 7.0% | < 7.0% | ~7.0% | High latency on updates; misses superseded facts |
-| 📊 *BM25 (Search Baseline)* | 48.0% | < 7.0% | ~27.5% | Simple keyword matching without memory reasoning |
+| **Continuum (internal direct-core diagnostic)** | **34.0%** (34/100) | **8.0%** (8/100) | **21.0%** (42/200) | A baseline for investigating extraction, retrieval, and supersession |
 
-> 💡 **Why does 21% represent an industry-leading score?**  
-> On simple tests ("What is my favorite color?"), AI systems easily score 90%.  
-> **FactConsolidation is the "Navy SEAL obstacle course" of AI memory.** With 455 dense facts and dozens of deliberate contradictions, multi-hop reasoning is described by academic researchers as *"near-unsolved"* (most systems score below 7%). Scoring **34% on Single-Hop** nearly **doubles Mem0** and **quadruples Zep**, setting a new standard for open memory engines.
+> ⚠️ **Comparison warning:** this run used Continuum's internal `process_message_pair` path, a custom answer prompt, and retrieval `k=40`. It is not directly comparable to published Mem0, Zep, or BM25 rows that use different ingestion, readers, models, and retrieval budgets. Do not describe 21% as industry-leading. A public `/v1/memories` run is a separate product-path evaluation.
 
 ---
 
@@ -111,10 +106,10 @@ Each entry looks like this:
 <details>
 <summary><b>1. Was there any cheating or data leakage?</b></summary>
 
-**None.** The test harness enforces strict cryptographic and procedural boundaries:
+**None were intentionally introduced.** The published direct-core artifact enforces strict data boundaries, but it is not a certification of the public API path:
 - The **correct answers were strictly hidden** from the memory system during ingestion and question answering.
 - Gold answers were only accessed *after* the AI generated its answer to check if it got it right.
-- Zero questions were discarded, skipped, or retried (`200 / 200` scored).
+- Zero questions were discarded or skipped (`200 / 200` scored). Provider retries, if any, must be disclosed by the runner.
 </details>
 
 <details>

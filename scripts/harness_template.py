@@ -11,6 +11,8 @@ import argparse
 import asyncio
 import json
 import os
+import re
+import uuid
 from pathlib import Path
 
 
@@ -52,6 +54,8 @@ async def run_benchmark(
     output_path: Path,
     max_questions_per_subset: int | None = None,
 ) -> None:
+    if max_questions_per_subset is not None and not 1 <= max_questions_per_subset <= 100:
+        raise ValueError("max_questions_per_subset must be between 1 and 100")
     data = json.loads(dataset_path.read_text(encoding="utf-8"))
 
     results = []
@@ -64,10 +68,22 @@ async def run_benchmark(
             for a in row["answers"]
         ]
 
-        # Parse numbered facts: "0. Fact...", "1. Fact..."
-        facts = [line.split(". ", 1)[-1].strip() for line in context.strip().split("\n") if ". " in line]
+        # Parse and validate the official numbered source.  A loose ". " split
+        # can silently drop/reorder facts and produce an inflated benchmark.
+        facts: list[str] = []
+        for line in context.splitlines():
+            match = re.match(r"^\s*(\d+)\.\s+(.*\S)\s*$", line)
+            if match:
+                serial, fact = int(match.group(1)), match.group(2)
+                if serial != len(facts):
+                    raise ValueError(f"{subset}: expected serial {len(facts)}, found {serial}")
+                facts.append(fact)
+        if len(facts) != 455:
+            raise ValueError(f"{subset}: expected 455 numbered facts, found {len(facts)}")
+        if len(questions) != 100 or len(answers) != 100:
+            raise ValueError(f"{subset}: expected 100 aligned questions and answers")
 
-        session_id = f"eval_factcon_{subset}"
+        session_id = f"eval_factcon_{subset}_{uuid.uuid4().hex[:12]}"
         print(f"\n--- Running subset: {subset} ({len(facts)} facts, {len(questions)} questions) ---")
 
         await adapter.reset_session(session_id)
@@ -81,13 +97,22 @@ async def run_benchmark(
         for q_idx in range(limit):
             question = questions[q_idx]
             gold = answers[q_idx]
-            prediction = await adapter.search_and_answer(session_id, question)
+            try:
+                prediction = await adapter.search_and_answer(session_id, question)
+                prediction = "" if prediction is None else str(prediction)
+                error = None
+            except Exception as exc:
+                # Keep the fixed denominator while making transport failures
+                # visible to the caller and result artifact.
+                prediction = ""
+                error = f"{type(exc).__name__}: {exc}"
             results.append({
                 "subset": subset,
                 "index": q_idx,
                 "question": question,
                 "gold_answers": gold,
                 "prediction": prediction,
+                "error": error,
             })
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -99,10 +124,12 @@ def main():
     parser = argparse.ArgumentParser(description="Run FactConsolidation benchmark harness.")
     parser.add_argument("--dataset", type=Path, default=Path("fixtures/factconsolidation_official_6k.json"))
     parser.add_argument("--output", type=Path, default=Path("results/my_predictions.json"))
+    parser.add_argument("--max-questions", type=int, default=None,
+                        help="Optional smoke-test limit per subset; default runs all 100.")
     args = parser.parse_args()
 
     adapter = MockExampleAdapter()
-    asyncio.run(run_benchmark(adapter, args.dataset, args.output, max_questions_per_subset=5))
+    asyncio.run(run_benchmark(adapter, args.dataset, args.output, max_questions_per_subset=args.max_questions))
 
 
 if __name__ == "__main__":

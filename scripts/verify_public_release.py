@@ -30,6 +30,11 @@ def main() -> int:
             continue
         relative = path.relative_to(ROOT)
         lower_parts = {part.lower() for part in relative.parts}
+        # Running the dependency-free verifier or its tests may create local
+        # interpreter bytecode. It is not a release artifact and is ignored by
+        # git; do not make a clean checkout fail merely because it was tested.
+        if "__pycache__" in lower_parts or path.suffix.lower() == ".pyc":
+            continue
         if lower_parts & FORBIDDEN_PATH_PARTS:
             failures.append(f"forbidden path component: {relative}")
             continue

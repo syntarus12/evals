@@ -11,7 +11,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ALLOWED_SUFFIXES = {".md", ".json", ".py", ".gitignore", ".txt", ".license"}
+ALLOWED_SUFFIXES = {".md", ".json", ".py", ".gitignore", ".txt", ".license", ".png", ".jpg", ".jpeg", ".webp"}
+BINARY_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp"}
 FORBIDDEN_PATH_PARTS = {".env", "raw", "private", "customer", "secrets", "__pycache__"}
 PATTERNS = {
     "OpenAI-style key": re.compile(r"\bsk-[A-Za-z0-9_-]{20,}\b"),
@@ -40,6 +41,8 @@ def main() -> int:
             continue
         if path.suffix.lower() not in ALLOWED_SUFFIXES and path.name not in {"LICENSE", ".gitignore"}:
             failures.append(f"unexpected file type: {relative}")
+            continue
+        if path.suffix.lower() in BINARY_SUFFIXES:
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
         for label, pattern in PATTERNS.items():

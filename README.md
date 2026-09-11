@@ -44,6 +44,12 @@ The following table reports the 6K FactConsolidation results using the official 
 
 The comparison rows are taken from the [MemoryAgentBench FactConsolidation results and metric definitions](https://github.com/HUST-AI-HYZ/MemoryAgentBench). The complete Continuum predictions and the locked fixture are included in this repository for reproduction.
 
+### Shareable benchmark graphic
+
+![Continuum FactConsolidation benchmark comparison](assets/continuum_factconsolidation_benchmark_light.png)
+
+The `<7%` baseline bars are drawn slightly shorter than the exact 7% Zep / Graphiti bar for visual ordering; their labels remain `<7%` because the published baseline does not provide an exact value.
+
 ---
 
 ## 🔍 Total Transparency: Inspect Any Question Yourself

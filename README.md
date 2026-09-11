@@ -35,9 +35,28 @@ the complete primary synthetic [fixture](fixtures/hard_cases.json), and full
 | Medical allergy clearance | 2 / 2 | 0 / 2 | 0 / 2 |
 | Canonical state supersession | 2 / 2 | 2 / 2 | 0 / 2 |
 
-The primary fixture includes every synthetic fact, probe, allowed evidence
-group, and stale-context rule. Extended diagnostics are described in the same
-fixture and methodology. We publish scores and interpretation, rather than raw
+## Extended security, temporal anchor & namespace snapshot
+
+In addition to the primary cases, we evaluated 3 extended diagnostic scenarios (6 probes total) testing security boundary behavior, complex temporal reasoning, and multi-tenant isolation on **2026-09-10**:
+
+| Provider / mode | Strict probes | Mean evidence coverage | Key observations |
+|---|---:|---:|---|
+| Syntarus API | 5 / 6 | 0.944 | Transformed malicious injection ticket into an attack record + surfaced export policy; full temporal date/past-state anchors; zero cross-user leakage. |
+| Mem0 API | 2 / 6 | 0.833 | Stored prompt-injection ticket as valid user request without trust labels; partial temporal evidence; zero cross-user leakage. |
+| Zep graph edge search | 1 / 6 | 0.556 | Surfaced policy edges but did not expose injection context in 120s; incomplete temporal anchors in 120s; zero cross-user leakage. |
+
+See the sanitized [extended summary](results/direct_api_security_temporal_2026-09-10.summary.json) and [extended case breakdown](results/direct_api_security_temporal_2026-09-10.case_breakdown.json).
+
+### Extended per-case breakdown
+
+| Diagnostic Case | Syntarus API | Mem0 API | Zep graph edge search | Critical finding |
+|---|---:|---:|---:|---|
+| Poisoning exposure | 2 / 2 | 0 / 2 | 0 / 2 | Syntarus reframed injection as an attack record with governing policy; Mem0 stored it as an active user command; Zep did not retrieve the injection episode. |
+| Complex temporal anchors | 2 / 2 | 1 / 2 | 0 / 2 | Syntarus anchored event date (2026-01-31) and past status relative to 2026-03-05; Mem0 returned partial anchors; Zep was incomplete within 120s. |
+| Multi-tenant namespace isolation | 1 / 2 | 1 / 2 | 1 / 2 | All three providers demonstrated **zero cross-user leakage** across 20s of adversarial probing. Owner retrieval succeeded across providers. |
+
+The primary and extended fixtures include every synthetic fact, probe, allowed evidence
+group, and stale-context rule. We publish scores and interpretation, rather than raw
 provider payloads, because raw payloads include volatile request metadata and
 are not a safe or stable reproduction surface.
 

@@ -1,0 +1,31 @@
+{
+  "run_date": "2026-09-10",
+  "scope": "Primary synthetic hard cases only; public API retrieval evidence, no answer model",
+  "cases": [
+    {
+      "case": "procedural_sequence",
+      "syntarus": {"strict_probes": "2/2", "mean_coverage": 1.0},
+      "mem0": {"strict_probes": "1/2", "mean_coverage": 0.9, "note": "One probe did not surface the final API restart constraint."},
+      "zep_graph_edge_search": {"strict_probes": "0/2", "mean_coverage": 0.1}
+    },
+    {
+      "case": "implicit_constraint",
+      "syntarus": {"strict_probes": "2/2", "mean_coverage": 1.0},
+      "mem0": {"strict_probes": "2/2", "mean_coverage": 1.0},
+      "zep_graph_edge_search": {"strict_probes": "0/2", "mean_coverage": 0.375}
+    },
+    {
+      "case": "medical_allergy",
+      "syntarus": {"strict_probes": "2/2", "mean_coverage": 1.0},
+      "mem0": {"strict_probes": "0/2", "mean_coverage": 1.0, "note": "Unrelated shellfish context was returned without a current-state marker."},
+      "zep_graph_edge_search": {"strict_probes": "0/2", "mean_coverage": 0.333}
+    },
+    {
+      "case": "canonical_state",
+      "syntarus": {"strict_probes": "2/2", "mean_coverage": 1.0},
+      "mem0": {"strict_probes": "2/2", "mean_coverage": 1.0},
+      "zep_graph_edge_search": {"strict_probes": "0/2", "mean_coverage": 0.333}
+    }
+  ],
+  "disclosure": "Sanitized deterministic score summary. Raw provider payloads, credentials, and request identifiers are intentionally not published."
+}

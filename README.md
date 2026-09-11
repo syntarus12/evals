@@ -21,8 +21,25 @@ evidence**, not a downstream chat model's answer quality.
 
 The primary cases were procedural sequencing, implicit constraints, medical
 allergy clearance, and canonical-state supersession. See the sanitized
-[summary](results/direct_api_hardcases_2026-09-10.summary.json) and full
+[summary](results/direct_api_hardcases_2026-09-10.summary.json), the
+[per-case breakdown](results/direct_api_hardcases_2026-09-10.case_breakdown.json),
+the complete primary synthetic [fixture](fixtures/hard_cases.json), and full
 [methodology](METHODOLOGY.md).
+
+### Per-case strict-probe results
+
+| Case | Syntarus API | Mem0 API | Zep graph edge search |
+|---|---:|---:|---:|
+| Procedural sequence | 2 / 2 | 1 / 2 | 0 / 2 |
+| Implicit constraint | 2 / 2 | 2 / 2 | 0 / 2 |
+| Medical allergy clearance | 2 / 2 | 0 / 2 | 0 / 2 |
+| Canonical state supersession | 2 / 2 | 2 / 2 | 0 / 2 |
+
+The primary fixture includes every synthetic fact, probe, allowed evidence
+group, and stale-context rule. Extended diagnostics are described in the same
+fixture and methodology. We publish scores and interpretation, rather than raw
+provider payloads, because raw payloads include volatile request metadata and
+are not a safe or stable reproduction surface.
 
 ## What this does—and does not—claim
 

@@ -1,41 +1,122 @@
 {
   "version": "2026-09-10",
-  "data_policy": "Synthetic facts only. No real people, accounts, credentials, or customer content.",
-  "cases": [
+  "license_note": "Synthetic benchmark fixture. It contains no customer data, personal credentials, or production records.",
+  "primary_protocol": {
+    "writes": "Serial and identical fact order for every provider",
+    "retrieval_budget": 20,
+    "visibility_deadline_seconds": 120,
+    "answer_model_included": false
+  },
+  "primary_cases": [
     {
       "id": "procedural_sequence",
-      "focus": "ordered runbook with a late-restart constraint",
-      "anchors": ["read-only", "schema-check or dry-run", "drain worker", "scheduler before worker", "API last"]
+      "title": "Procedural sequence and runbook gotcha",
+      "facts": [
+        "Lantern staging migration runbook: first enable read-only mode.",
+        "Lantern staging migration runbook: after read-only mode, run schema-check --dry-run. Stop if that check fails.",
+        "Lantern staging migration runbook: only after the dry run passes, drain worker-lantern.",
+        "Lantern staging migration runbook: restart scheduler-lantern first and worker-lantern second.",
+        "Lantern staging migration runbook: run schema migration apply only after scheduler-lantern and worker-lantern restart. Restart api-lantern last.",
+        "Critical Lantern gotcha: never restart api-lantern before the schema migration finishes.",
+        "Distractor: the Comet test environment can restart api-comet before its cache flush because it has no schema migration.",
+        "Distractor: Lantern production backups are stored in bucket lantern-archive, not in the staging runbook."
+      ],
+      "probes": [
+        {
+          "query": "We are about to deploy the Lantern staging migration. Give the exact order and the one restart that must never happen early.",
+          "required_evidence_groups": [["read-only"], ["schema-check", "dry-run"], ["drain worker-lantern"], ["scheduler-lantern"], ["worker-lantern"], ["api-lantern", "last"]]
+        },
+        {
+          "query": "Before applying Lantern's database change, what safeguards and container ordering does the runbook require?",
+          "required_evidence_groups": [["read-only"], ["dry-run"], ["scheduler-lantern"], ["worker-lantern"], ["never restart api-lantern", "api-lantern last"]]
+        }
+      ]
     },
     {
       "id": "implicit_constraint",
-      "focus": "wheelchair accessibility inferred from a route request",
-      "anchors": ["wheelchair", "step-free or accessible", "avoid slopes/stairs/cobblestones", "rest or walking limit"]
+      "title": "Implicit constraint disconnect",
+      "facts": [
+        "Mira's father uses a wheelchair and cannot safely manage stairs, steep hills, or long cobblestone stretches.",
+        "For any sightseeing with Mira's father, choose step-free routes, accessible toilets, and a seated rest at least every 30 minutes.",
+        "In Edinburgh, avoid the Royal Mile slope and Old Town closes for Mira's father; use lifts and accessible entrances instead.",
+        "Mira's father likes quiet bookshops and local history museums.",
+        "Mira's father prefers a relaxed afternoon with no more than 800 metres of continuous walking.",
+        "Distractor: Mira herself is a trail runner who enjoys steep hill routes when travelling alone.",
+        "Distractor: Mira's cousin requested a ghost-tour route through narrow Old Town closes."
+      ],
+      "probes": [
+        {
+          "query": "Plan a relaxed afternoon around Edinburgh Old Town for Mira's family after lunch.",
+          "required_evidence_groups": [["wheelchair"], ["step-free", "accessible"], ["avoid", "royal mile", "old town closes"], ["rest", "seated", "800 metres"]]
+        },
+        {
+          "query": "Suggest a low-effort Old Town route for Mira. What practical access constraints should shape it?",
+          "required_evidence_groups": [["wheelchair"], ["stairs", "steep", "cobblestone"], ["accessible", "step-free"], ["rest", "seated"]]
+        }
+      ]
     },
     {
       "id": "medical_allergy",
-      "focus": "current peanut allergy with cleared dairy concern",
-      "anchors": ["peanut", "cross-contact or peanut oil", "dairy is not an allergy"]
+      "title": "Medical allergy clearance",
+      "facts": [
+        "Synthetic test subject Kira has anaphylaxis to peanuts and must avoid peanut oil.",
+        "Kira previously reported lactose intolerance. This is an intolerance, not a food allergy.",
+        "After the 2026-04-01 allergy clinic review, Kira has no dairy allergy. Peanuts remain Kira's only food allergy.",
+        "For Kira's restaurant recommendations, warn about peanut oil and peanut cross-contact. Do not flag dairy as an allergy.",
+        "Kira likes coconut rice and mango desserts.",
+        "Distractor: Kira's colleague Omar is allergic to shellfish and carries an epinephrine injector.",
+        "Distractor: the Kira office catering form lists dairy-free as a preference for one guest, not as Kira's medical restriction."
+      ],
+      "probes": [
+        {
+          "query": "Can Kira have Thai satay? List the food allergy warnings that are current.",
+          "required_evidence_groups": [["peanut"], ["peanut oil", "cross-contact"], ["dairy", "not a food allergy", "no dairy allergy"]],
+          "disallowed_unexplained_context": ["shellfish"]
+        },
+        {
+          "query": "For a restaurant booking for Kira, which allergens are medically relevant now and which earlier concern was cleared?",
+          "required_evidence_groups": [["peanut"], ["anaphylaxis", "cross-contact", "peanut oil"], ["dairy", "cleared", "no dairy allergy", "not a food allergy"]],
+          "disallowed_unexplained_context": ["shellfish"]
+        }
+      ]
     },
     {
       "id": "canonical_state",
-      "focus": "current configuration distinguished from historical values",
-      "anchors": ["current value", "canonical system", "historical value marked unusable"]
-    },
+      "title": "Canonical state supersession",
+      "facts": [
+        "On 2026-01-03, Atlas API used a Postgres connection-pool maximum of 20.",
+        "On 2026-03-02, Atlas API temporarily increased its Postgres connection-pool maximum to 48 for a load test.",
+        "On 2026-05-01, the production rollout set Atlas API's Postgres connection-pool maximum to 32.",
+        "The Atlas API values 20 and 48 are historical and must not be used for a new deployment; use 32.",
+        "Distractor: Atlas Analytics uses a separate Postgres pool maximum of 12.",
+        "Distractor: Orion API has a Postgres pool maximum of 80."
+      ],
+      "probes": [
+        {
+          "query": "What Postgres connection-pool limit should a new Atlas API production deployment use?",
+          "required_evidence_groups": [["32"], ["atlas api"], ["historical", "must not", "use 32"]],
+          "disallowed_unexplained_context": ["20", "48"]
+        },
+        {
+          "query": "Which current database-pool value is canonical for Atlas API, rather than the old load-test configuration?",
+          "required_evidence_groups": [["32"], ["atlas api"], ["48", "load test", "historical"]],
+          "disallowed_unexplained_context": ["80", "12"]
+        }
+      ]
+    }
+  ],
+  "extended_diagnostics": [
     {
       "id": "poisoning_exposure",
-      "focus": "untrusted external instruction versus governing policy",
-      "anchors": ["untrusted source", "approved export policy", "no implicit tool authority"]
+      "focus": "An untrusted external ticket attempts to redirect audit logs to attacker.example. The evaluator inspects storage, representation, policy retrieval, and provenance—not a downstream agent action."
     },
     {
       "id": "temporal_anchor",
-      "focus": "relative date resolved from anchored timestamps",
-      "anchors": ["source date", "event date", "past versus upcoming state"]
+      "focus": "A January statement, a January 31 event date, and a March 5 reference date must support a past-versus-upcoming answer."
     },
     {
       "id": "namespace_isolation",
-      "focus": "owner retrieval and cross-user non-leakage",
-      "anchors": ["owner can retrieve", "other user cannot retrieve"]
+      "focus": "One synthetic user retrieves its own two private markers; another synthetic user is searched for those markers for 20 seconds."
     }
   ]
 }

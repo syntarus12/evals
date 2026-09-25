@@ -1,93 +1,84 @@
-# Continuum FactConsolidation Benchmark Methodology
+# Continuum FactConsolidation — live run methodology
 
-This document details the protocol and scoring rules for the published **Continuum benchmark run** on the MemoryAgentBench FactConsolidation fixture. It also records the published baseline rows shown in the report so the comparison is easy to audit.
+## 1. What this evaluation measures
 
----
+FactConsolidation tests whether a memory system can answer questions from a sequence of facts that include updates and contradictions. The official split used here contains two 100-question subsets:
 
-## 1. Task Definition
+- **Single-Hop (SH):** answer a direct lookup from the fact history.
+- **Multi-Hop (MH):** combine facts across links while respecting updates.
 
-**FactConsolidation** measures how a memory system resolves factual conflicts and tracks canonical state across an ongoing stream of updates.
+The “32K” text is the upstream subset label. It is **not** the number of facts written in this run.
 
-### Conflict Resolution Dynamics
-- The memory system is presented with **455 numbered statements** (e.g., historical facts, entity associations, sports positions, birthplaces, citizenships).
-- Several statements deliberately contradict earlier statements in the sequence:
-  - *Statement A (earlier)*: Entity $X$ has attribute $Y_1$.
-  - *Statement B (later)*: Entity $X$ has attribute $Y_2$.
-- The governing rule of the benchmark: **newer facts supersede older facts**.
-- The evaluation tests whether the memory engine retrieves the updated canonical value $Y_2$ or mistakenly returns the superseded value $Y_1$.
+## 2. Run identity and scope
 
-### Subsets
-1. **Single-Hop (SH 6K)**: 100 questions requiring retrieval of a single entity attribute under direct conflict resolution.
-2. **Multi-Hop (MH 6K)**: 100 questions requiring connecting two or more entities across different statements while respecting supersession along the relation chain.
+- **System under test:** Continuum, through the public Syntarus production API.
+- **Scope:** Continuum only. This was not an A/B or vendor-neutral leaderboard run; no search-only or other vendor arm was evaluated.
+- **Production build:** 33e2b8a613226818b31d35568d84d1ef8fd74f9d.
+- **Dataset:** ai-hyz/MemoryAgentBench, split Conflict_Resolution, subsets factconsolidation_sh_32k and factconsolidation_mh_32k.
+- **Dataset revision:** 7ea066982b140a19337e17e60d45d4076e042faf.
+- **Upstream code revision:** fe1735de8cf8b9908e1e3d3b5612afc815698062.
+- **Published fixture SHA-256:** f67d02515da0eb4311b029aa50e1d85340c3ba664c0ecefcba9186eb8a3152fc.
+- **Official prompt SHA-256 recorded by the harness:** ca4ea130355adab357ce8cd00bb11c1cdbe7cb945454764a66f1ac7f692f501d.
+- **Configured answer model:** glm5.3@v2, temperature 0.
 
----
+The checksum and source revisions are also recorded in [BENCHMARK_LOCK.json](fixtures/BENCHMARK_LOCK.json). The run summary contains the aggregate scores and non-sensitive configuration.
 
-## 2. Evaluation Protocol
+## 3. Live production procedure
 
-1. **Dataset Pinning**:
-   - Snapshot: `fixtures/factconsolidation_official_6k.json`
-   - Revision: `7ea066982b140a19337e17e60d45d4076e042faf` from `ai-hyz/MemoryAgentBench`.
-   - Verified against `fixtures/BENCHMARK_LOCK.json` with SHA256: `f2cdfb17cf56bcb3f5448a86f23a7931a72548bb8a8e1d3b307d0a62526e2d32`.
+1. The harness validated the expected production build and public HTTP path before the evaluation.
+2. It created a fresh, isolated temporary user namespace. The namespace identifier and credentials are intentionally not published.
+3. It sent the benchmark facts as **2,310 ordered, numbered, durable writes** through POST /v1/memories. The run used the public write path and waited for durable worker checkpoints; there was one outstanding ordered submission, preserving fact order.
+4. The official SH and MH fixture contexts were byte-identical. To avoid writing the same context twice, the facts were ingested once and shared by the two question subsets.
+5. It evaluated all 100 SH and all 100 MH questions using the public /memories/resolve Continuum path. The retrieval query was the dataset question only; the answerer received the official task instructions and the returned Continuum context. The configured retrieval limit was top 10, with resolver limits of 8 claims and 50 internal candidates.
+6. Gold answers were kept out of ingestion and answering. After predictions were produced, every question was scored against the official answer variants from the pinned fixture.
+7. The harness checked the complete denominator and result integrity, deleted the temporary namespace, and verified that a post-delete resolve returned zero results.
 
-2. **Sequential Ingestion**:
-   - Facts 0 through 454 are ingested sequentially in strict numerical order.
-   - Batching or out-of-order reordering is prohibited.
-   - Gold answers are completely withheld during ingestion and retrieval.
+The run completed in **10,825.9 seconds (about 3 hours)**. All 2,310 writes completed, all 200 question requests were scored, there were zero failed Continuum requests, and namespace cleanup was verified. No API key, raw state card, temporary namespace identifier, or provider event identifier is included in this repository.
 
-3. **Retrieval & Answering**:
-   - For each of the 200 questions, the internal engine retrieves relevant context (fixed budget of 40 memories).
-   - The Continuum answerer is prompted with:
-     ```text
-     You are a knowledge management system. Facts may conflict; newer facts supersede older facts.
-     Answer using only the retrieved facts. Return exactly one concise line: ANSWER: <answer>.
-     
-     RETRIEVED FACTS:
-     {facts}
-     
-     QUESTION: {question}
-     ```
-   - Temperature is set to `0`; provider-side nondeterminism may still exist.
-   - The ingestion path calls Continuum's `process_message_pair` pipeline directly. A public API run is a separate product-path evaluation.
+## 4. Scoring
 
-4. **Fail-Closed Denominator**:
-   - All 200 questions are scored.
-   - Any transport error, timeout, or missing prediction is treated as an explicit failure (`correct = False`).
-   - No queries are dropped or re-sampled.
+The reported metric is the official normalized substring exact match (SubEM) implementation in [score_factconsolidation.py](scripts/score_factconsolidation.py):
 
----
+1. Lowercase the text.
+2. Remove ASCII punctuation (without replacing punctuation with spaces).
+3. Remove the articles a, an, and the.
+4. Collapse whitespace.
+5. Count a prediction correct when any normalized gold-answer variant is a substring of the normalized prediction.
 
-## 3. Official Scoring Function: Normalized Substring Exact Match (SubEM)
+Every question remains in the fixed denominator: 100 SH, 100 MH, 200 overall. Empty or non-matching answers count as incorrect. The scorer reads gold answers from the locked fixture rather than trusting gold fields in the prediction artifact.
 
-The official MemoryAgentBench scoring function is implemented in [`scripts/score_factconsolidation.py`](scripts/score_factconsolidation.py):
+## 5. Results
 
-1. **Normalization**:
-   - Convert text to lowercase.
-   - Strip all ASCII punctuation without whitespace substitution (`string.punctuation`).
-   - Remove English articles (`a`, `an`, `the`).
-   - Normalize multi-whitespace sequences to a single space.
+| Subset | Correct | Total | Accuracy |
+|---|---:|---:|---:|
+| Single-Hop | 98 | 100 | 98% |
+| Multi-Hop | 15 | 100 | 15% |
+| Overall | 113 | 200 | 56.5% |
 
-2. **Match Rule**:
-   - A prediction is scored as **Correct (`1`)** if and only if any of the normalized gold answer variants appears as a substring within the normalized prediction.
-   - Empty predictions or failures to extract are scored as **Incorrect (`0`)**.
+This pattern is the main finding: direct retrieval was strong in this run, but multi-hop performance was poor. The overall average does not remove that weakness.
 
----
+### Measured latency
 
-## 4. Integrity and Fairness Controls
+Latency is from this specific production run, not a capacity guarantee:
 
-- **No Data Contamination**: Gold answers are strictly decoupled from the memory store and only consulted post-hoc during scoring.
-- **Failures Included in Denominator**: The denominator is fixed at 200 (100 SH, 100 MH).
-- **Zero Cherry-Picking**: The entire official test split was evaluated in a single continuous session.
-- **Open Reproducibility**: Complete question-by-question prediction outputs and reference answers are provided in `results/factconsolidation_predictions_full.json`.
+| Operation | Count | Mean | p50 | p95 | p99 |
+|---|---:|---:|---:|---:|---:|
+| Answer attempt | 200 | 1,074 ms | 849 ms | 2,158 ms | 3,648 ms |
+| Question end-to-end | 200 | 1,791 ms | 1,586 ms | 3,052 ms | 4,341 ms |
+| Durable write end-to-end | 2,310 | 4,527 ms | 4,393 ms | 10,449 ms | 12,680 ms |
 
-## 5. Published comparison rows
+## 6. Limits and interpretation
 
-The report includes the MemoryAgentBench published 6K baselines alongside Continuum:
+- This is one run against one production build, one API configuration, and one benchmark split. It is not a confidence interval or a guarantee of future behavior.
+- There is no same-run baseline, so these scores do not support a claim that Continuum is better or worse than another system.
+- SubEM is an automatic string-matching metric. It is reproducible, but does not judge explanation quality or semantic equivalence beyond the official accepted answer variants.
+- SH and MH use shared ingested context; they are two question subsets over one memory stream, not two independent ingestion trials.
+- Production latency includes external service and network conditions observed at run time and should not be read as an SLA.
 
-| System | Single-Hop | Multi-Hop |
-|---|---:|---:|
-| HippoRAG-v2 | 54.0% | < 7.0% |
-| BM25 | 48.0% | < 7.0% |
-| Mem0 | 18.0% | < 7.0% |
-| Zep / Graphiti | 7.0% | < 7.0% |
+## 7. Public artifacts and privacy
 
-These values are reproduced from the benchmark's published baseline table; the source reports the multi-hop entries as below 7%.
+- [Locked official fixture](fixtures/factconsolidation_official_32k.json)
+- [Run summary](results/factconsolidation_summary.json)
+- [Sanitized question-level predictions](results/factconsolidation_predictions_full.json)
+
+The published records contain only subset, question index, question text, official answer variants, prediction, and correctness. Temporary account/user IDs, API keys, event IDs, raw retrieved state cards, and raw API responses were excluded. The fresh namespace was verified empty after the run.

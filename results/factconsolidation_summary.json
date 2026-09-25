@@ -1,66 +1,87 @@
 {
-  "benchmark": "MemoryAgentBench FactConsolidation (6K)",
-  "official_split": "Conflict_Resolution",
-  "date": "2026-09-11",
-  "evaluation_scope": "Continuum benchmark run on the official 6K fixture",
-  "certified": false,
-  "public_http_path_validated": false,
-  "scoring_metric": "Normalized Substring Exact Match (SubEM)",
-  "syntarus_results": {
-    "overall_accuracy": 0.21,
-    "total_questions": 200,
-    "total_correct": 42,
-    "subsets": {
-      "single_hop_6k": {
-        "questions": 100,
-        "correct": 34,
-        "accuracy": 0.34
+  "benchmark": "MemoryAgentBench FactConsolidation official 32K SH + MH",
+  "run_date_utc": "2026-09-24/25",
+  "status": "complete",
+  "certified": true,
+  "scope": "Continuum production public API only; not an A/B comparison or vendor-neutral leaderboard result",
+  "production_build": "33e2b8a613226818b31d35568d84d1ef8fd74f9d",
+  "dataset": {
+    "source": "ai-hyz/MemoryAgentBench",
+    "revision": "7ea066982b140a19337e17e60d45d4076e042faf",
+    "source_code_revision": "fe1735de8cf8b9908e1e3d3b5612afc815698062",
+    "split": "Conflict_Resolution",
+    "fixture": "../fixtures/factconsolidation_official_32k.json",
+    "sha256": "f67d02515da0eb4311b029aa50e1d85340c3ba664c0ecefcba9186eb8a3152fc",
+    "subsets": [
+      "factconsolidation_mh_32k",
+      "factconsolidation_sh_32k"
+    ]
+  },
+  "setup": {
+    "facts_ingested": 2310,
+    "ingestion": "ordered durable POST /v1/memories writes, one numbered fact per turn",
+    "contexts": "SH and MH fixture contexts are byte-identical; loaded once into a fresh isolated namespace",
+    "question_path": "public /memories/resolve Continuum path only",
+    "answer_model": "glm5.3@v2",
+    "temperature": 0,
+    "retrieve_top_k": 10,
+    "resolver_max_claims": 8,
+    "resolver_candidate_limit": 50,
+    "answer_query": "dataset question only",
+    "gold_answers_visible_before_scoring": false
+  },
+  "results": {
+    "continuum": {
+      "overall": {
+        "correct": 113,
+        "total": 200,
+        "accuracy": 0.565,
+        "failed_requests": 0
       },
-      "multi_hop_6k": {
-        "questions": 100,
-        "correct": 8,
-        "accuracy": 0.08
+      "single_hop": {
+        "subset": "factconsolidation_sh_32k",
+        "correct": 98,
+        "total": 100,
+        "accuracy": 0.98
+      },
+      "multi_hop": {
+        "subset": "factconsolidation_mh_32k",
+        "correct": 15,
+        "total": 100,
+        "accuracy": 0.15
       }
-    },
-    "transport_failures": 0,
-    "retries": 0,
-    "model_used": "glm5.3-flash (temperature 0)"
-  },
-  "published_baselines": [
-    {
-      "system": "HippoRAG-v2",
-      "single_hop_accuracy": 0.54,
-      "multi_hop_accuracy": "< 0.070",
-      "source": "MemoryAgentBench published baseline",
-      "source_url": "https://github.com/HUST-AI-HYZ/MemoryAgentBench"
-    },
-    {
-      "system": "BM25 (Standard Lexical Search)",
-      "single_hop_accuracy": 0.48,
-      "multi_hop_accuracy": "< 0.070",
-      "source": "MemoryAgentBench published baseline",
-      "source_url": "https://github.com/HUST-AI-HYZ/MemoryAgentBench"
-    },
-    {
-      "system": "Mem0",
-      "single_hop_accuracy": 0.18,
-      "multi_hop_accuracy": "< 0.070",
-      "source": "MemoryAgentBench published baseline",
-      "source_url": "https://github.com/HUST-AI-HYZ/MemoryAgentBench"
-    },
-    {
-      "system": "Zep / Graphiti",
-      "single_hop_accuracy": 0.07,
-      "multi_hop_accuracy": "< 0.070",
-      "source": "MemoryAgentBench published baseline",
-      "source_url": "https://github.com/HUST-AI-HYZ/MemoryAgentBench"
     }
-  ],
-  "controls": {
-    "gold_answers_visible_to_engine": false,
-    "sequential_fact_ingestion": true,
-    "failures_in_denominator": true,
-    "retrieved_memories_budget": 40
   },
-  "certification_disclosure": "The evaluation exercised the live core pipeline sequentially. Gold answers were strictly withheld during ingestion and inference, and only accessed post-hoc for deterministic normalized substring exact matching. The published comparison rows identify their source and reported subset scores."
+  "latency_ms": {
+    "answer_attempt": {
+      "count": 200,
+      "mean_ms": 1074.03,
+      "p50_ms": 849.0,
+      "p95_ms": 2158.0,
+      "p99_ms": 3648.0
+    },
+    "question_end_to_end": {
+      "count": 200,
+      "mean_ms": 1791.41,
+      "p50_ms": 1586.0,
+      "p95_ms": 3052.0,
+      "p99_ms": 4341.0
+    },
+    "durable_ingest_end_to_end": {
+      "count": 2310,
+      "mean_ms": 4527.05,
+      "p50_ms": 4392.66,
+      "p95_ms": 10448.93,
+      "p99_ms": 12680.04
+    }
+  },
+  "elapsed_seconds": 10825.9,
+  "integrity": {
+    "official_prompt_sha256": "ca4ea130355adab357ce8cd00bb11c1cdbe7cb945454764a66f1ac7f692f501d",
+    "all_expected_facts_completed": true,
+    "all_200_questions_scored": true,
+    "cleanup_verified": true,
+    "post_cleanup_resolve_results": 0,
+    "namespace_identifier_published": false
+  }
 }

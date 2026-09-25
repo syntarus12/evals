@@ -1,21 +1,23 @@
 {
-  "benchmark": "MemoryAgentBench FactConsolidation",
+  "benchmark": "MemoryAgentBench FactConsolidation 32K subsets",
   "paper": "MemoryAgentBench: Evaluating Memory Capabilities of LLM Agents across Core Competencies",
   "official_repository": "https://github.com/HUST-AI-HYZ/MemoryAgentBench",
   "official_revision": "fe1735de8cf8b9908e1e3d3b5612afc815698062",
   "dataset_source": "https://huggingface.co/datasets/ai-hyz/MemoryAgentBench",
   "dataset_revision": "7ea066982b140a19337e17e60d45d4076e042faf",
-  "dataset_file": "factconsolidation_official_6k.json",
-  "dataset_sha256": "f2cdfb17cf56bcb3f5448a86f23a7931a72548bb8a8e1d3b307d0a62526e2d32",
+  "dataset_file": "factconsolidation_official_32k.json",
+  "dataset_sha256": "f67d02515da0eb4311b029aa50e1d85340c3ba664c0ecefcba9186eb8a3152fc",
   "split": "Conflict_Resolution",
   "subsets": [
-    "factconsolidation_sh_6k",
-    "factconsolidation_mh_6k"
+    "factconsolidation_mh_32k",
+    "factconsolidation_sh_32k"
   ],
   "metric": "Normalized Substring Exact Match (SubEM)",
+  "expected_questions": 200,
+  "questions_per_subset": 100,
   "official_rules": [
-    "Sequential fact ingestion (facts 0 to 454 in chronological order)",
-    "Gold answers strictly withheld from ingestion, retrieval, and answering",
-    "Failures remain in denominator (all 200 questions scored, zero cherry-picking)"
+    "Ingest the context facts sequentially and preserve their order",
+    "Do not expose gold answers to the memory system or answerer before scoring",
+    "Score all 200 questions; failures remain in the denominator"
   ]
 }

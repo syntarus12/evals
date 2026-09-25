@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Vendor-Neutral Black-Box Evaluation Harness for MemoryAgentBench FactConsolidation.
+"""Example adapter scaffold for the MemoryAgentBench FactConsolidation 32K fixture.
 
-This script demonstrates how any memory system can be evaluated against the
-FactConsolidation benchmark without exposing internal engine implementation details.
+This is a template for a separate run, not the harness that produced the
+published Continuum live API results.
 """
 from __future__ import annotations
 
@@ -78,8 +78,8 @@ async def run_benchmark(
                 if serial != len(facts):
                     raise ValueError(f"{subset}: expected serial {len(facts)}, found {serial}")
                 facts.append(fact)
-        if len(facts) != 455:
-            raise ValueError(f"{subset}: expected 455 numbered facts, found {len(facts)}")
+        if len(facts) != 2310:
+            raise ValueError(f"{subset}: expected 2310 numbered facts, found {len(facts)}")
         if len(questions) != 100 or len(answers) != 100:
             raise ValueError(f"{subset}: expected 100 aligned questions and answers")
 
@@ -122,7 +122,7 @@ async def run_benchmark(
 
 def main():
     parser = argparse.ArgumentParser(description="Run FactConsolidation benchmark harness.")
-    parser.add_argument("--dataset", type=Path, default=Path("fixtures/factconsolidation_official_6k.json"))
+    parser.add_argument("--dataset", type=Path, default=Path("fixtures/factconsolidation_official_32k.json"))
     parser.add_argument("--output", type=Path, default=Path("results/my_predictions.json"))
     parser.add_argument("--max-questions", type=int, default=None,
                         help="Optional smoke-test limit per subset; default runs all 100.")

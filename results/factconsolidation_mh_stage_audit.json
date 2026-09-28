@@ -1,0 +1,736 @@
+{
+  "benchmark": "MemoryAgentBench FactConsolidation 32K multi-hop",
+  "subset": "factconsolidation_mh_32k",
+  "question_count": 100,
+  "classification_method": "normalized_answer_text_only",
+  "counts_by_stage": {
+    "answer_visible_in_state_card": {
+      "total": 33,
+      "correct": 30,
+      "incorrect": 3
+    },
+    "not_in_retrieval_candidates": {
+      "total": 47,
+      "correct": 12,
+      "incorrect": 35
+    },
+    "lost_during_resolution": {
+      "total": 17,
+      "correct": 1,
+      "incorrect": 16
+    },
+    "lost_at_candidate_selection": {
+      "total": 3,
+      "correct": 0,
+      "incorrect": 3
+    }
+  },
+  "limitations": [
+    "Categories are based on literal normalized answer-text presence across diagnostic candidate/card stages, not complete source-to-answer chain provenance.",
+    "All 100 cases used normalized_answer_text_only; source-fact-ID provenance was unavailable in this audit.",
+    "A literal match is not proof that the full reasoning chain was present; absence of a literal match can miss paraphrases or correct model priors."
+  ],
+  "cases": [
+    {
+      "index": 0,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 1,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 2,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 3,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": false
+    },
+    {
+      "index": 4,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 5,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 6,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 7,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 8,
+      "stage": "lost_during_resolution",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 9,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 10,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 11,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 12,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 13,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 14,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 15,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 16,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 17,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 18,
+      "stage": "lost_during_resolution",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 19,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 20,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 21,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 22,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 23,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 24,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 25,
+      "stage": "lost_during_resolution",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 26,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 27,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 28,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 29,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 30,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 31,
+      "stage": "lost_during_resolution",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 32,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 33,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 34,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 35,
+      "stage": "lost_during_resolution",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 36,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 37,
+      "stage": "lost_during_resolution",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": true
+    },
+    {
+      "index": 38,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 39,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 40,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 41,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 42,
+      "stage": "lost_at_candidate_selection",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 43,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 44,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": true
+    },
+    {
+      "index": 45,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 46,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 47,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 48,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 49,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 50,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 51,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 52,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 53,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 54,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 55,
+      "stage": "lost_during_resolution",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 56,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 57,
+      "stage": "lost_during_resolution",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 58,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 59,
+      "stage": "lost_during_resolution",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 60,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 61,
+      "stage": "lost_during_resolution",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 62,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 63,
+      "stage": "lost_during_resolution",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 64,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 65,
+      "stage": "lost_during_resolution",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 66,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 67,
+      "stage": "lost_during_resolution",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 68,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 69,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 70,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 71,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": false
+    },
+    {
+      "index": 72,
+      "stage": "lost_at_candidate_selection",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 73,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 74,
+      "stage": "lost_at_candidate_selection",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 75,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 76,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 77,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 78,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 79,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 80,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 81,
+      "stage": "lost_during_resolution",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 82,
+      "stage": "lost_during_resolution",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 83,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 84,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 85,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": false
+    },
+    {
+      "index": 86,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 87,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 88,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 89,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 90,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": true
+    },
+    {
+      "index": 91,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 92,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 93,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 94,
+      "stage": "answer_visible_in_state_card",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 95,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 96,
+      "stage": "lost_during_resolution",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 97,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    },
+    {
+      "index": 98,
+      "stage": "not_in_retrieval_candidates",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
+    },
+    {
+      "index": 99,
+      "stage": "lost_during_resolution",
+      "matching_mode": "normalized_answer_text_only",
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
+    }
+  ]
+}
+  

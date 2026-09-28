@@ -1,10 +1,12 @@
 {
   "benchmark": "MemoryAgentBench FactConsolidation official 32K SH + MH",
-  "run_date_utc": "2026-09-24/25",
+  "run_date_utc": "2026-09-27",
+  "run_started_at_utc": "2026-09-27T14:07:03Z",
   "status": "complete",
-  "certified": true,
-  "scope": "Continuum production public API only; not an A/B comparison or vendor-neutral leaderboard result",
-  "production_build": "33e2b8a613226818b31d35568d84d1ef8fd74f9d",
+  "harness_certified_flag": true,
+  "certification_semantics": "The run harness marked the protocol complete; this is not an independent certification, an accuracy guarantee, or a vendor-neutral leaderboard result.",
+  "scope": "Continuum-only replay through the public Syntarus API; no search arm or competitor baseline.",
+  "production_build": "10930cca71055a9a9e9cb83b45e25fe8a1903a63",
   "dataset": {
     "source": "ai-hyz/MemoryAgentBench",
     "revision": "7ea066982b140a19337e17e60d45d4076e042faf",
@@ -18,70 +20,135 @@
     ]
   },
   "setup": {
-    "facts_ingested": 2310,
-    "ingestion": "ordered durable POST /v1/memories writes, one numbered fact per turn",
-    "contexts": "SH and MH fixture contexts are byte-identical; loaded once into a fresh isolated namespace",
-    "question_path": "public /memories/resolve Continuum path only",
-    "answer_model": "glm5.3@v2",
+    "answer_path": "POST /v1/memories/resolve, Continuum only",
+    "answer_model": "glm5.3@v2 (Sarvam)",
     "temperature": 0,
-    "retrieve_top_k": 10,
+    "max_output_tokens": 512,
+    "answer_attempts": 200,
+    "answer_retries": 0,
+    "failed_question_requests": 0,
+    "retrieval_query": "dataset question only",
+    "resolver_top_k": 10,
     "resolver_max_claims": 8,
-    "resolver_candidate_limit": 50,
-    "answer_query": "dataset question only",
-    "gold_answers_visible_before_scoring": false
+    "resolver_internal_candidate_limit": 50,
+    "scoring": "normalized substring exact match (SubEM)",
+    "gold_answers_visible_to_resolver_or_answerer": false,
+    "corpus": {
+      "official_facts_preloaded": 2310,
+      "replay_ingest_writes": 0,
+      "retained_namespace_reused": true,
+      "namespace_identifier_published": false,
+      "full_corpus_inventory_readback_during_replay": false,
+      "cleanup_attempted": false,
+      "retained_after_replay": true,
+      "note": "The score replay reused a retained namespace previously loaded with the official 2,310-fact context. It did not freshly ingest or clean up that namespace."
+    },
+    "completion": {
+      "questions_expected": 200,
+      "questions_scored": 200,
+      "questions_failed": 0,
+      "mh_resolution_traces": 100
+    }
   },
   "results": {
     "continuum": {
       "overall": {
-        "correct": 113,
+        "correct": 140,
         "total": 200,
-        "accuracy": 0.565,
+        "accuracy": 0.7,
         "failed_requests": 0
       },
       "single_hop": {
         "subset": "factconsolidation_sh_32k",
-        "correct": 98,
+        "correct": 97,
         "total": 100,
-        "accuracy": 0.98
+        "accuracy": 0.97
       },
       "multi_hop": {
         "subset": "factconsolidation_mh_32k",
-        "correct": 15,
+        "correct": 43,
         "total": 100,
-        "accuracy": 0.15
+        "accuracy": 0.43
       }
     }
   },
   "latency_ms": {
     "answer_attempt": {
       "count": 200,
-      "mean_ms": 1074.03,
-      "p50_ms": 849.0,
-      "p95_ms": 2158.0,
-      "p99_ms": 3648.0
+      "mean_ms": 895.95,
+      "p50_ms": 761,
+      "p95_ms": 1726,
+      "p99_ms": 2118
+    },
+    "resolver_compute": {
+      "count": 200,
+      "mean_ms": 7.3,
+      "p50_ms": 5.42,
+      "p95_ms": 18.87,
+      "p99_ms": 31.08
     },
     "question_end_to_end": {
       "count": 200,
-      "mean_ms": 1791.41,
-      "p50_ms": 1586.0,
-      "p95_ms": 3052.0,
-      "p99_ms": 4341.0
+      "mean_ms": 2158.82,
+      "p50_ms": 1724,
+      "p95_ms": 4441,
+      "p99_ms": 5555,
+      "max_ms": 6436
     },
     "durable_ingest_end_to_end": {
-      "count": 2310,
-      "mean_ms": 4527.05,
-      "p50_ms": 4392.66,
-      "p95_ms": 10448.93,
-      "p99_ms": 12680.04
+      "count": 0,
+      "mean_ms": null,
+      "p50_ms": null,
+      "p95_ms": null,
+      "p99_ms": null,
+      "max_ms": null,
+      "note": "Not measured during this retained-corpus replay; no ingestion writes were made."
     }
   },
-  "elapsed_seconds": 10825.9,
+  "elapsed_seconds": 581.3,
+  "previous_public_run": {
+    "production_build": "33e2b8a613226818b31d35568d84d1ef8fd74f9d",
+    "overall_correct": 113,
+    "overall_total": 200,
+    "overall_accuracy": 0.565,
+    "single_hop_correct": 98,
+    "multi_hop_correct": 15,
+    "note": "Cross-run comparison only. The production build and namespace/run conditions differ; it is not a controlled ablation and does not establish that a single change caused the score delta."
+  },
+  "evidence_stage_audit": {
+    "file": "factconsolidation_mh_stage_audit.json",
+    "method": "normalized literal answer text; no source-ID provenance",
+    "counts": {
+      "answer_visible_in_state_card": {
+        "total": 33,
+        "correct": 30,
+        "incorrect": 3
+      },
+      "not_in_retrieval_candidates": {
+        "total": 47,
+        "correct": 12,
+        "incorrect": 35
+      },
+      "lost_during_resolution": {
+        "total": 17,
+        "correct": 1,
+        "incorrect": 16
+      },
+      "lost_at_candidate_selection": {
+        "total": 3,
+        "correct": 0,
+        "incorrect": 3
+      }
+    }
+  },
   "integrity": {
-    "official_prompt_sha256": "ca4ea130355adab357ce8cd00bb11c1cdbe7cb945454764a66f1ac7f692f501d",
-    "all_expected_facts_completed": true,
+    "fixture_matches_locked_revision": true,
+    "all_2310_source_facts_completed_in_prior_ingestion": true,
+    "replay_added_no_facts": true,
     "all_200_questions_scored": true,
-    "cleanup_verified": true,
-    "post_cleanup_resolve_results": 0,
+    "model_answer_retries": 0,
+    "cleanup_verified": null,
     "namespace_identifier_published": false
-  }
+  },
+  "privacy": "Published outputs omit API keys, user/namespace IDs, provider event IDs, raw state cards, and raw API responses."
 }

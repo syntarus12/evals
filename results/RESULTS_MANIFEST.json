@@ -1,0 +1,50 @@
+{
+  "schema": "verified-results-v1",
+  "entries": [
+    {
+      "label": "latest replication",
+      "predictions": "results/factconsolidation_predictions_full.json",
+      "summary": "results/factconsolidation_summary.json",
+      "questions": 200,
+      "arm": "continuum",
+      "sha256": "f94fa143f9b50f7cb4c1fdaaca4d70e73ea84736ba01ada1d046170befb244aa",
+      "summary_sha256": "979ca0ab4909b02a1ee340fc2d802d9c761e79925371368bb1d235fd7bcc1379"
+    },
+    {
+      "label": "initial replay",
+      "predictions": "results/replays/2026-09-28_initial_predictions.json",
+      "summary": "results/replays/2026-09-28_initial_summary.json",
+      "questions": 200,
+      "arm": "continuum",
+      "sha256": "6d145c79037940a2b12e9f298bf1132339a3241378ebb91a16f163fe33c0faeb",
+      "summary_sha256": "4b1bc86e7e9b28c958d2d1f3a7f2463f6447d0d9c828f425789877fd9e0c02a4"
+    },
+    {
+      "label": "previous publication",
+      "predictions": "results/archive/2026-09-27/factconsolidation_predictions_full.json",
+      "summary": "results/archive/2026-09-27/factconsolidation_summary.json",
+      "questions": 200,
+      "arm": "continuum",
+      "sha256": "1892ed1cea4dd3ea2f56db3706b71cc485fc0d223e6723009f599d9987d52164",
+      "summary_sha256": "73b3ddcc8ef333c2579ac03fe4b2df00e9a80d60e3e77f7a9c84d488776f896e"
+    },
+    {
+      "label": "paired experiment control",
+      "predictions": "results/experiments/2026-09-29_control_predictions.json",
+      "summary": "results/experiments/2026-09-29_chain_canary_summary.json",
+      "questions": 100,
+      "arm": "control",
+      "sha256": "fd1c14ade2a14d7baf3db95c1a2bc1dc9a90e9713b79211c5b8ed4bee3374ea2",
+      "summary_sha256": "0bb8e5b76a215cd5a220f8f22c82aca434110922169fcf162d43109059659323"
+    },
+    {
+      "label": "paired experiment canary",
+      "predictions": "results/experiments/2026-09-29_chain_canary_predictions.json",
+      "summary": "results/experiments/2026-09-29_chain_canary_summary.json",
+      "questions": 100,
+      "arm": "chain_canary",
+      "sha256": "651a287d7ad85722b10c1495ad71dfbccf71206ecbce27e9ea7088de1a619b0e",
+      "summary_sha256": "0bb8e5b76a215cd5a220f8f22c82aca434110922169fcf162d43109059659323"
+    }
+  ]
+}

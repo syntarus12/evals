@@ -1,0 +1,7 @@
+# Checksum-locked fixtures must have identical bytes on Windows and Unix.
+* text=auto eol=lf
+*.json text eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary

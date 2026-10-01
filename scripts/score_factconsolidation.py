@@ -91,7 +91,7 @@ def score_records(
         if not isinstance(entry, dict):
             raise ValueError("each prediction record must be an object")
         subset, index = entry.get("subset", "unknown"), entry.get("index")
-        if not isinstance(index, int) or (subset, index) not in locked_gold:
+        if type(index) is not int or (subset, index) not in locked_gold:
             raise ValueError(f"prediction has unknown subset/index: {subset!r}/{index!r}")
         key = (subset, index)
         if key in seen:
@@ -100,7 +100,11 @@ def score_records(
         stats = subsets.setdefault(subset, {"total": 0, "correct": 0})
         stats["total"] += 1
         # Embedded gold_answers are informational only and never used for scoring.
-        if score_subem(str(entry.get("prediction", "")), locked_gold[key]):
+        prediction = entry.get("prediction", "")
+        if not isinstance(prediction, str):
+            raise ValueError(f"prediction must be text: {subset}/{index}")
+        # A failed/truncated transport is not rescued by a coincidental match.
+        if not entry.get("failure") and score_subem(prediction, locked_gold[key]):
             stats["correct"] += 1
 
     if seen != set(locked_gold):

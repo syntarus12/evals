@@ -11,12 +11,14 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ALLOWED_SUFFIXES = {".md", ".json", ".py", ".gitignore", ".txt", ".license", ".png", ".jpg", ".jpeg", ".webp"}
+ALLOWED_SUFFIXES = {".md", ".json", ".py", ".gitignore", ".gitattributes", ".txt", ".license", ".png", ".jpg", ".jpeg", ".webp"}
 BINARY_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp"}
 FORBIDDEN_PATH_PARTS = {".env", "raw", "private", "customer", "secrets", "__pycache__"}
 PATTERNS = {
     "OpenAI-style key": re.compile(r"\bsk-[A-Za-z0-9_-]{20,}\b"),
     "Syntarus-style key": re.compile(r"\bsk_mem_[A-Za-z0-9_-]{20,}\b"),
+    "Syntarus delegated token": re.compile(r"\bst_mem_[A-Za-z0-9_-]{20,}\b"),
+    "GitHub token": re.compile(r"\b(?:gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,})\b"),
     "Mem0-style key": re.compile(r"\bm0-[A-Za-z0-9_-]{20,}\b"),
     "Zep-style key": re.compile(r"\bz_[A-Za-z0-9._-]{60,}\b"),
     "JWT-like token": re.compile(r"\beyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\b"),
@@ -39,7 +41,7 @@ def main() -> int:
         if lower_parts & FORBIDDEN_PATH_PARTS:
             failures.append(f"forbidden path component: {relative}")
             continue
-        if path.suffix.lower() not in ALLOWED_SUFFIXES and path.name not in {"LICENSE", ".gitignore"}:
+        if path.suffix.lower() not in ALLOWED_SUFFIXES and path.name not in {"LICENSE", ".gitignore", ".gitattributes"}:
             failures.append(f"unexpected file type: {relative}")
             continue
         if path.suffix.lower() in BINARY_SUFFIXES:

@@ -1,0 +1,3202 @@
+[
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 0,
+    "question": "Where did the religion associated with the Bagratuni Dynasty come into existence?",
+    "prediction": "Taipei",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 632,
+    "resolver_latency_ms": 5.758,
+    "server_latency_ms": 1468.213,
+    "client_latency_ms": 1775,
+    "question_end_to_end_ms": 2426,
+    "gold_answers": [
+      "Taipei"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 1,
+    "question": "From which continent does the sport of Haverfordwest County A.F.C. originally hail?",
+    "prediction": "Oceania",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 1168,
+    "resolver_latency_ms": 17.158,
+    "server_latency_ms": 1670.16,
+    "client_latency_ms": 1977,
+    "question_end_to_end_ms": 3159,
+    "gold_answers": [
+      "Oceania"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 2,
+    "question": "What is the birthplace of the person who founded the religion that Clemens August of Bavaria believed in?",
+    "prediction": "Not found in the knowledge pool.",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 2069,
+    "resolver_latency_ms": 8.121,
+    "server_latency_ms": 2760.976,
+    "client_latency_ms": 3068,
+    "question_end_to_end_ms": 5151,
+    "gold_answers": [
+      "Champa"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 3,
+    "question": "What is the name of the current head of state of the country where the sport Phoenix Inferno came from?",
+    "prediction": "Alassane Dramane Ouattara",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1119,
+    "resolver_latency_ms": 15.141,
+    "server_latency_ms": 2648.668,
+    "client_latency_ms": 2953,
+    "question_end_to_end_ms": 4085,
+    "gold_answers": [
+      "Sergio Mattarella"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 4,
+    "question": "What is the occupation of the chairperson of the Palestine Liberation Organization?",
+    "prediction": "Politician",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 761,
+    "resolver_latency_ms": 3.348,
+    "server_latency_ms": 2036.383,
+    "client_latency_ms": 2412,
+    "question_end_to_end_ms": 3190,
+    "gold_answers": [
+      "basketball player"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 5,
+    "question": "In which continent was the sport originated in the country where Andrea Pirlo's speciality derived from?",
+    "prediction": "Europe",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 799,
+    "resolver_latency_ms": 2.512,
+    "server_latency_ms": 613.512,
+    "client_latency_ms": 919,
+    "question_end_to_end_ms": 1739,
+    "gold_answers": [
+      "South America"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 6,
+    "question": "Which language is used as the official language in the country where The Indianapolis Star comes from?",
+    "prediction": "Ukrainian",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 907,
+    "resolver_latency_ms": 6.189,
+    "server_latency_ms": 1650.979,
+    "client_latency_ms": 1970,
+    "question_end_to_end_ms": 2898,
+    "gold_answers": [
+      "Ukrainian"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 7,
+    "question": "Who holds the title of chief public representative in the country where Jason Motte is a citizen?",
+    "prediction": "Roch Marc Christian Kaboré",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 922,
+    "resolver_latency_ms": 11.365,
+    "server_latency_ms": 2093.496,
+    "client_latency_ms": 2405,
+    "question_end_to_end_ms": 3347,
+    "gold_answers": [
+      "Roch Marc Christian Kaboré"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 8,
+    "question": "Which language is recognized as the official language of the country that the child of the performer of \"Heartbreak Hotel\" has citizenship of?",
+    "prediction": "Unknown (the knowledge pool does not contain information about the citizenship or official language of Lisa Marie Presley's country).",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1081,
+    "resolver_latency_ms": 5.126,
+    "server_latency_ms": 3412.472,
+    "client_latency_ms": 3736,
+    "question_end_to_end_ms": 4833,
+    "gold_answers": [
+      "French"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 9,
+    "question": "Which city is the capital of the country where the sport associated with the founder of Pakistan Tehreek-e-Insaf originates from?",
+    "prediction": "London",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1129,
+    "resolver_latency_ms": 12.981,
+    "server_latency_ms": 3327.074,
+    "client_latency_ms": 3663,
+    "question_end_to_end_ms": 4815,
+    "gold_answers": [
+      "Duluth"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 10,
+    "question": "What was the place of death of the author of \"Theaetetus\"?",
+    "prediction": "Portland",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 708,
+    "resolver_latency_ms": 3.86,
+    "server_latency_ms": 1530.481,
+    "client_latency_ms": 1842,
+    "question_end_to_end_ms": 2563,
+    "gold_answers": [
+      "Portland"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 11,
+    "question": "What is the location of the headquarters of the company that originally broadcasted Perfect Strangers?",
+    "prediction": "London",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 967,
+    "resolver_latency_ms": 5.78,
+    "server_latency_ms": 1475.202,
+    "client_latency_ms": 1786,
+    "question_end_to_end_ms": 2770,
+    "gold_answers": [
+      "London"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 12,
+    "question": "Which country did the work that was made famous by the author of \"The Andromeda Strain\" originate in?",
+    "prediction": "Unknown (the knowledge pool does not contain the country of origin).",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1737,
+    "resolver_latency_ms": 7.984,
+    "server_latency_ms": 2092.071,
+    "client_latency_ms": 2397,
+    "question_end_to_end_ms": 4148,
+    "gold_answers": [
+      "Japan"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 13,
+    "question": "What is the country of citizenship of the chairperson of the Patriotic Union of Kurdistan?",
+    "prediction": "United States of America",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 489,
+    "resolver_latency_ms": 5.215,
+    "server_latency_ms": 1976.679,
+    "client_latency_ms": 2297,
+    "question_end_to_end_ms": 2802,
+    "gold_answers": [
+      "United States of America"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 14,
+    "question": "What was the location of the work of the person who founded the Kingdom of Etruria?",
+    "prediction": "Unknown (the knowledge pool does not contain information about the founder of the Kingdom of Etruria).",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 944,
+    "resolver_latency_ms": 5.523,
+    "server_latency_ms": 1203.523,
+    "client_latency_ms": 1522,
+    "question_end_to_end_ms": 2484,
+    "gold_answers": [
+      "Washington, D.C."
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 15,
+    "question": "Which country is connected with the founding of Aiginiakos F.C.?",
+    "prediction": "Not found in the knowledge pool.",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 881,
+    "resolver_latency_ms": 5.794,
+    "server_latency_ms": 600.794,
+    "client_latency_ms": 910,
+    "question_end_to_end_ms": 1813,
+    "gold_answers": [
+      "Soviet Union"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 16,
+    "question": "What is the name of the educational institution where the partner of Nicolae Ceaușescu was educated?",
+    "prediction": "Baldwin Wallace University",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 931,
+    "resolver_latency_ms": 8.621,
+    "server_latency_ms": 504.621,
+    "client_latency_ms": 800,
+    "question_end_to_end_ms": 1750,
+    "gold_answers": [
+      "Baldwin Wallace University"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 17,
+    "question": "Who directed or managed \"China Beach\" during its original broadcast?",
+    "prediction": "Ernst Heinkel",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 1359,
+    "resolver_latency_ms": 4.532,
+    "server_latency_ms": 985.348,
+    "client_latency_ms": 1291,
+    "question_end_to_end_ms": 2664,
+    "gold_answers": [
+      "Ernst Heinkel"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 18,
+    "question": "Which sports discipline did Jim Kelly specialize in?",
+    "prediction": "Wide receiver",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 661,
+    "resolver_latency_ms": 1.386,
+    "server_latency_ms": 414.386,
+    "client_latency_ms": 718,
+    "question_end_to_end_ms": 1397,
+    "gold_answers": [
+      "rugby"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 19,
+    "question": "In which city is the capital of the country that FC Irtysh Omsk originates from located?",
+    "prediction": "I don't know",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 641,
+    "resolver_latency_ms": 6.81,
+    "server_latency_ms": 612.81,
+    "client_latency_ms": 925,
+    "question_end_to_end_ms": 1582,
+    "gold_answers": [
+      "Duluth"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 20,
+    "question": "In which country is the head of state responsible for the sport originated by S.C. Salgueiros?",
+    "prediction": "Oleg Tsarev",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 2496,
+    "resolver_latency_ms": 11.506,
+    "server_latency_ms": 3611.466,
+    "client_latency_ms": 3940,
+    "question_end_to_end_ms": 6450,
+    "gold_answers": [
+      "Oleg Tsarev"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 21,
+    "question": "Which language is recognized as the official tongue of the country where Arthur comes from?",
+    "prediction": "French",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 947,
+    "resolver_latency_ms": 1.318,
+    "server_latency_ms": 1949.09,
+    "client_latency_ms": 2265,
+    "question_end_to_end_ms": 3229,
+    "gold_answers": [
+      "French"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 22,
+    "question": "What country is associated as the origin of the sport played by Shawn Bradley?",
+    "prediction": "Cannot be determined from the knowledge pool.",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1669,
+    "resolver_latency_ms": 1.528,
+    "server_latency_ms": 537.528,
+    "client_latency_ms": 840,
+    "question_end_to_end_ms": 2530,
+    "gold_answers": [
+      "Australia"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 23,
+    "question": "What is the country of origin of the sport to which the head coach of Western Sydney Wanderers FC belongs?",
+    "prediction": "United States",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1071,
+    "resolver_latency_ms": 3.012,
+    "server_latency_ms": 524.012,
+    "client_latency_ms": 826,
+    "question_end_to_end_ms": 1912,
+    "gold_answers": [
+      "Australia"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 24,
+    "question": "In which city is the originating country of the music genre of \"Unforgettable\" currently headquartered?",
+    "prediction": "Unknown",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1479,
+    "resolver_latency_ms": 4.32,
+    "server_latency_ms": 455.32,
+    "client_latency_ms": 782,
+    "question_end_to_end_ms": 2280,
+    "gold_answers": [
+      "Tokyo"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 25,
+    "question": "Which languages were used by the author of the Aubrey-Maturin series in their writing and communication?",
+    "prediction": "English",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 788,
+    "resolver_latency_ms": 18.208,
+    "server_latency_ms": 2855.183,
+    "client_latency_ms": 3269,
+    "question_end_to_end_ms": 4072,
+    "gold_answers": [
+      "Italian"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 26,
+    "question": "What continent is associated with the country of citizenship of Emil Constantinescu?",
+    "prediction": "Asia",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 722,
+    "resolver_latency_ms": 4.773,
+    "server_latency_ms": 1524.58,
+    "client_latency_ms": 1845,
+    "question_end_to_end_ms": 2580,
+    "gold_answers": [
+      "Asia"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 27,
+    "question": "Who is the person responsible for founding the religion that Michael Patrick Carroll follows?",
+    "prediction": "Scooter Braun",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 893,
+    "resolver_latency_ms": 8.808,
+    "server_latency_ms": 2185.656,
+    "client_latency_ms": 2516,
+    "question_end_to_end_ms": 3431,
+    "gold_answers": [
+      "Scooter Braun"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 28,
+    "question": "Which city is the center of government in the country where Augustinas Voldemaras holds a citizenship?",
+    "prediction": "Nancy",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 960,
+    "resolver_latency_ms": 7.094,
+    "server_latency_ms": 1745.903,
+    "client_latency_ms": 2054,
+    "question_end_to_end_ms": 3028,
+    "gold_answers": [
+      "Nancy"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 29,
+    "question": "What is the name of the partner of the President of Azerbaijan?",
+    "prediction": "Unknown (the current President of Azerbaijan is Prince Andrew, Duke of York, and no fact in the knowledge pool states his partner).",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 2118,
+    "resolver_latency_ms": 3.857,
+    "server_latency_ms": 532.857,
+    "client_latency_ms": 843,
+    "question_end_to_end_ms": 2981,
+    "gold_answers": [
+      "Mahidol Adulyadej"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 30,
+    "question": "what kind of music does \"Born in the U.S.A.\" fall under according to its performer?",
+    "prediction": "Australian hip hop",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 1009,
+    "resolver_latency_ms": 10.115,
+    "server_latency_ms": 2909.617,
+    "client_latency_ms": 3236,
+    "question_end_to_end_ms": 4265,
+    "gold_answers": [
+      "Australian hip hop"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 31,
+    "question": "In which city was the person who founded St. Bonaventure University born?",
+    "prediction": "Unknown (the knowledge pool does not contain information about the founder of St. Bonaventure University or their birthplace).",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1199,
+    "resolver_latency_ms": 3.773,
+    "server_latency_ms": 586.773,
+    "client_latency_ms": 893,
+    "question_end_to_end_ms": 2108,
+    "gold_answers": [
+      "Beirut"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 32,
+    "question": "What is the name of the person who directed or managed the broadcaster that originally aired \"Soap\"?",
+    "prediction": "Ernst Heinkel",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 842,
+    "resolver_latency_ms": 6.239,
+    "server_latency_ms": 557.239,
+    "client_latency_ms": 863,
+    "question_end_to_end_ms": 1721,
+    "gold_answers": [
+      "Ernst Heinkel"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 33,
+    "question": "Which city serves as the capital of the country where the sport played by Brook Lopez originates?",
+    "prediction": "Unknown (the knowledge pool does not contain information about the sport Brook Lopez plays or its country of origin).",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1095,
+    "resolver_latency_ms": 1.551,
+    "server_latency_ms": 601.551,
+    "client_latency_ms": 908,
+    "question_end_to_end_ms": 2025,
+    "gold_answers": [
+      "Russellville"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 34,
+    "question": "In what location did the person who founded Chanel pass away?",
+    "prediction": "Montmélian",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 918,
+    "resolver_latency_ms": 3.952,
+    "server_latency_ms": 1521.043,
+    "client_latency_ms": 1835,
+    "question_end_to_end_ms": 2769,
+    "gold_answers": [
+      "Montmélian"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 35,
+    "question": "The chairperson of the Liberal Democratic Party belongs to a religion. In what city or country was it founded?",
+    "prediction": "Detroit",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1124,
+    "resolver_latency_ms": 8.57,
+    "server_latency_ms": 2182.478,
+    "client_latency_ms": 2502,
+    "question_end_to_end_ms": 3640,
+    "gold_answers": [
+      "Melbourne"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 36,
+    "question": "Which language is recognized as the official language in the country where \"Little Miss Sunshine\" comes from?",
+    "prediction": "Finnish",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 1565,
+    "resolver_latency_ms": 8.998,
+    "server_latency_ms": 2560.793,
+    "client_latency_ms": 2877,
+    "question_end_to_end_ms": 4455,
+    "gold_answers": [
+      "Finnish"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 37,
+    "question": "What is the capital city of the country where the founder of the manufacturer of Ford Transit Connect holds citizenship?",
+    "prediction": "Paris",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 968,
+    "resolver_latency_ms": 8.284,
+    "server_latency_ms": 2983.245,
+    "client_latency_ms": 3726,
+    "question_end_to_end_ms": 4707,
+    "gold_answers": [
+      "Paris"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 38,
+    "question": "In which language proceedings of the sport associated with Aris Thessaloniki F.C. are conducted in the country of its origin?",
+    "prediction": "English",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1331,
+    "resolver_latency_ms": 76.534,
+    "server_latency_ms": 681.534,
+    "client_latency_ms": 986,
+    "question_end_to_end_ms": 2336,
+    "gold_answers": [
+      "Arabic"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 39,
+    "question": "What is the country of citizenship of the author of \"Starship Troopers\"?",
+    "prediction": "United Kingdom",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 684,
+    "resolver_latency_ms": 5.963,
+    "server_latency_ms": 1776.067,
+    "client_latency_ms": 2082,
+    "question_end_to_end_ms": 2786,
+    "gold_answers": [
+      "United Kingdom"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 40,
+    "question": "In which city did the individual who established Blériot pass away?",
+    "prediction": "The knowledge pool does not contain information about where Juliette Gordon Low passed away.",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 992,
+    "resolver_latency_ms": 2.961,
+    "server_latency_ms": 1427.101,
+    "client_latency_ms": 1739,
+    "question_end_to_end_ms": 2747,
+    "gold_answers": [
+      "Pune"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 41,
+    "question": "Who is currently the chairperson of the institution where the Chicago Boys received their education?",
+    "prediction": "Sushma Swaraj",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 1127,
+    "resolver_latency_ms": 6.947,
+    "server_latency_ms": 803.947,
+    "client_latency_ms": 1120,
+    "question_end_to_end_ms": 2266,
+    "gold_answers": [
+      "Sushma Swaraj"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 42,
+    "question": "At which educational organization did the author of the Lorentz ether theory receive their education?",
+    "prediction": "Bowdoin College",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1343,
+    "resolver_latency_ms": 6.099,
+    "server_latency_ms": 628.099,
+    "client_latency_ms": 934,
+    "question_end_to_end_ms": 2296,
+    "gold_answers": [
+      "University of Oxford"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 43,
+    "question": "What is the religious affiliation of the person who founded the Transcendental Meditation movement?",
+    "prediction": "Atheism",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 1063,
+    "resolver_latency_ms": 6.584,
+    "server_latency_ms": 1602.645,
+    "client_latency_ms": 1909,
+    "question_end_to_end_ms": 2991,
+    "gold_answers": [
+      "atheism"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 44,
+    "question": "Which city is the birthplace of the founder associated with Niagara University's religion?",
+    "prediction": "Epworth",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 1621,
+    "resolver_latency_ms": 17.17,
+    "server_latency_ms": 528.17,
+    "client_latency_ms": 832,
+    "question_end_to_end_ms": 2465,
+    "gold_answers": [
+      "Epworth"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 45,
+    "question": "What is the location of the headquarters of the company that employed Ward Kimball?",
+    "prediction": "Plovdiv",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 1268,
+    "resolver_latency_ms": 4.762,
+    "server_latency_ms": 584.762,
+    "client_latency_ms": 887,
+    "question_end_to_end_ms": 2169,
+    "gold_answers": [
+      "Plovdiv"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 46,
+    "question": "What is the name of the chief of state of the country where Leo Stein holds citizenship?",
+    "prediction": "Connachta",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 755,
+    "resolver_latency_ms": 7.805,
+    "server_latency_ms": 2536.231,
+    "client_latency_ms": 2848,
+    "question_end_to_end_ms": 3626,
+    "gold_answers": [
+      "Connachta"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 47,
+    "question": "What is the birthplace of the founder of the religion followed by Leo I the Thracian?",
+    "prediction": "Not found in the knowledge pool.",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1383,
+    "resolver_latency_ms": 8.573,
+    "server_latency_ms": 2554.301,
+    "client_latency_ms": 2866,
+    "question_end_to_end_ms": 4269,
+    "gold_answers": [
+      "Epworth"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 48,
+    "question": "What is the sport in which Tyrone Willingham specializes and plays a special position on the team?",
+    "prediction": "American football, quarterback.",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1589,
+    "resolver_latency_ms": 1.873,
+    "server_latency_ms": 558.873,
+    "client_latency_ms": 853,
+    "question_end_to_end_ms": 2457,
+    "gold_answers": [
+      "Muay Thai"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 49,
+    "question": "What is the birthplace of the writer of \"L.A. Confidential\"?",
+    "prediction": "Dykanka",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 1042,
+    "resolver_latency_ms": 5.551,
+    "server_latency_ms": 1430.872,
+    "client_latency_ms": 1722,
+    "question_end_to_end_ms": 2778,
+    "gold_answers": [
+      "Dykanka"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 50,
+    "question": "Which continent does the country where François Furet holds citizenship belong to?",
+    "prediction": "North America",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 847,
+    "resolver_latency_ms": 6.451,
+    "server_latency_ms": 888.295,
+    "client_latency_ms": 1195,
+    "question_end_to_end_ms": 2057,
+    "gold_answers": [
+      "North America"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 51,
+    "question": "Which city acts as the capital of the country of origin of the musical genre that is associated with Garth Brooks' spouse?",
+    "prediction": "Washington, D.C.",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1745,
+    "resolver_latency_ms": 2.945,
+    "server_latency_ms": 787.945,
+    "client_latency_ms": 1087,
+    "question_end_to_end_ms": 2849,
+    "gold_answers": [
+      "Harrisville"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 52,
+    "question": "In which city is the capital located of the country where the director/producer of \"666 Park Avenue\" is a citizen?",
+    "prediction": "Washington, D.C.",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 894,
+    "resolver_latency_ms": 2.771,
+    "server_latency_ms": 1198.771,
+    "client_latency_ms": 1816,
+    "question_end_to_end_ms": 2726,
+    "gold_answers": [
+      "Beaumont"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 53,
+    "question": "In which country did the sport associated with the Philippine Basketball Association Draft originate?",
+    "prediction": "Soviet Union",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 767,
+    "resolver_latency_ms": 6.997,
+    "server_latency_ms": 466.997,
+    "client_latency_ms": 765,
+    "question_end_to_end_ms": 1551,
+    "gold_answers": [
+      "Soviet Union"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 54,
+    "question": "What is the birthplace of the person who created Indiana Jones?",
+    "prediction": "Not found in the knowledge pool.",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1286,
+    "resolver_latency_ms": 3.796,
+    "server_latency_ms": 404.796,
+    "client_latency_ms": 708,
+    "question_end_to_end_ms": 2013,
+    "gold_answers": [
+      "Lüftelberg"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 55,
+    "question": "What is the capital city of the country whose country of origin of the author of the notable work \"Beyond Good and Evil\"?",
+    "prediction": "Unknown",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 748,
+    "resolver_latency_ms": 9.766,
+    "server_latency_ms": 1600.238,
+    "client_latency_ms": 1905,
+    "question_end_to_end_ms": 2670,
+    "gold_answers": [
+      "Harrisville"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 56,
+    "question": "What is the birthplace of the person who wrote \"1984\"?",
+    "prediction": "Unknown (the knowledge pool states the author of 1984 is Constantine VII, but no birthplace is recorded for him).",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1726,
+    "resolver_latency_ms": 2.344,
+    "server_latency_ms": 1128.344,
+    "client_latency_ms": 1418,
+    "question_end_to_end_ms": 3163,
+    "gold_answers": [
+      "Constantinople"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 57,
+    "question": "What language did the author of \"A Passage to India\" speak, write or sign in?",
+    "prediction": "Not found in the knowledge pool.",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1218,
+    "resolver_latency_ms": 9.477,
+    "server_latency_ms": 2146.014,
+    "client_latency_ms": 2452,
+    "question_end_to_end_ms": 3685,
+    "gold_answers": [
+      "Spanish"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 58,
+    "question": "What city serves as the capital of the country where \"The Undead\" came from?",
+    "prediction": "Rupnagar",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 1044,
+    "resolver_latency_ms": 17.955,
+    "server_latency_ms": 1741.079,
+    "client_latency_ms": 2052,
+    "question_end_to_end_ms": 3115,
+    "gold_answers": [
+      "Rupnagar"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 59,
+    "question": "Which language is considered as the official language of the religion associated with the partner of the individual who performed \"Hunky Dory\"?",
+    "prediction": "Unknown (the knowledge pool does not contain information about John Legend’s partner or any associated religion).",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1382,
+    "resolver_latency_ms": 2.27,
+    "server_latency_ms": 667.27,
+    "client_latency_ms": 973,
+    "question_end_to_end_ms": 2370,
+    "gold_answers": [
+      "Picard"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 60,
+    "question": "What languages does Amber Heard's significant other know how to speak, write, or sign?",
+    "prediction": "English",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 685,
+    "resolver_latency_ms": 3.441,
+    "server_latency_ms": 460.441,
+    "client_latency_ms": 758,
+    "question_end_to_end_ms": 1462,
+    "gold_answers": [
+      "Danish"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 61,
+    "question": "What continent is the birthplace of the CEO of the developer of \"Windows Communication Foundation\" located in?",
+    "prediction": "Cannot be determined from the knowledge pool.",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1266,
+    "resolver_latency_ms": 10.211,
+    "server_latency_ms": 554.211,
+    "client_latency_ms": 867,
+    "question_end_to_end_ms": 2149,
+    "gold_answers": [
+      "North America"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 62,
+    "question": "What was the work location of the person who founded the religion associated with Edmund Ignatius Rice?",
+    "prediction": "Not found in the knowledge pool.",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1832,
+    "resolver_latency_ms": 11.943,
+    "server_latency_ms": 2656.968,
+    "client_latency_ms": 2962,
+    "question_end_to_end_ms": 4814,
+    "gold_answers": [
+      "Riyadh Region"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 63,
+    "question": "What is the name of the individual serving as the chief of state of the country where Maccabi Ironi Ashdod F.C. originated?",
+    "prediction": "Unknown (the knowledge pool does not contain the chief of state of the country where Maccabi Ironi Ashdod F.C. originated).",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1329,
+    "resolver_latency_ms": 8.622,
+    "server_latency_ms": 861.622,
+    "client_latency_ms": 1176,
+    "question_end_to_end_ms": 2521,
+    "gold_answers": [
+      "Sergio Mattarella"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 64,
+    "question": "Which person was the founder of the company that manufactured the Ford Fairmont?",
+    "prediction": "Peter the Great",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 949,
+    "resolver_latency_ms": 7.638,
+    "server_latency_ms": 1690.84,
+    "client_latency_ms": 1987,
+    "question_end_to_end_ms": 2955,
+    "gold_answers": [
+      "Peter the Great"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 65,
+    "question": "What is the place of death of the performer of the song collection \"Back to Black\"?",
+    "prediction": "Unknown (not in the knowledge pool)",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 841,
+    "resolver_latency_ms": 7.631,
+    "server_latency_ms": 2138.178,
+    "client_latency_ms": 2454,
+    "question_end_to_end_ms": 3309,
+    "gold_answers": [
+      "Berlin"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 66,
+    "question": "Who is responsible for the foundation of the location where Kittilä's official language is spoken?",
+    "prediction": "Cannot be determined from the knowledge pool.",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1215,
+    "resolver_latency_ms": 2.78,
+    "server_latency_ms": 578.78,
+    "client_latency_ms": 882,
+    "question_end_to_end_ms": 2113,
+    "gold_answers": [
+      "Stirling Silliphanta"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 67,
+    "question": "Who currently holds the title of head of state of the country where David Graveney was born?",
+    "prediction": "Cannot be determined from the knowledge pool.",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1467,
+    "resolver_latency_ms": 2.259,
+    "server_latency_ms": 566.259,
+    "client_latency_ms": 876,
+    "question_end_to_end_ms": 2357,
+    "gold_answers": [
+      "Alassane Dramane Ouattara"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 68,
+    "question": "What is the city where the manufacturer of Mercedes-Benz W126 has its headquarters?",
+    "prediction": "Chicago",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 806,
+    "resolver_latency_ms": 5.195,
+    "server_latency_ms": 1905.713,
+    "client_latency_ms": 2222,
+    "question_end_to_end_ms": 3045,
+    "gold_answers": [
+      "Chicago"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 69,
+    "question": "What is the name of the individual who manages the network that first broadcasted \"General Hospital\"?",
+    "prediction": "Ernst Heinkel",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 756,
+    "resolver_latency_ms": 5.638,
+    "server_latency_ms": 1023.145,
+    "client_latency_ms": 1349,
+    "question_end_to_end_ms": 2121,
+    "gold_answers": [
+      "Ernst Heinkel"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 70,
+    "question": "What is the name of the capital of the country where the sport coached by the head coach of the Cleveland Indians was invented?",
+    "prediction": "Tokyo",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1777,
+    "resolver_latency_ms": 5.383,
+    "server_latency_ms": 588.383,
+    "client_latency_ms": 885,
+    "question_end_to_end_ms": 2678,
+    "gold_answers": [
+      "Amposta"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 71,
+    "question": "Which language or languages are spoken, written or signed by the creator of the TV series \"24\"?",
+    "prediction": "Unknown (no fact in the knowledge pool about the creator of the TV series \"24\").",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 853,
+    "resolver_latency_ms": 3.532,
+    "server_latency_ms": 590.532,
+    "client_latency_ms": 896,
+    "question_end_to_end_ms": 1768,
+    "gold_answers": [
+      "Japanese"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 72,
+    "question": "What is the capital city of the country where Pepe Reina's sport originates from?",
+    "prediction": "London",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1290,
+    "resolver_latency_ms": 1.924,
+    "server_latency_ms": 1155.924,
+    "client_latency_ms": 1451,
+    "question_end_to_end_ms": 2755,
+    "gold_answers": [
+      "Oderzo"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 73,
+    "question": "What is the name of the capital city of the country where the founder of the manufacturer of Ford F-Series hailed from?",
+    "prediction": "Paris",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 911,
+    "resolver_latency_ms": 19.488,
+    "server_latency_ms": 2585.113,
+    "client_latency_ms": 2895,
+    "question_end_to_end_ms": 3825,
+    "gold_answers": [
+      "New Delhi"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 74,
+    "question": "Which city is the seat of government of the country whose head of government formed the Monti Cabinet?",
+    "prediction": "Rome",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1144,
+    "resolver_latency_ms": 5.891,
+    "server_latency_ms": 1693.44,
+    "client_latency_ms": 1973,
+    "question_end_to_end_ms": 3130,
+    "gold_answers": [
+      "Duluth"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 75,
+    "question": "Which city serves as the headquarters location of the educational institution where the spouse of Federico Fellini studied?",
+    "prediction": "Birmingham",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 834,
+    "resolver_latency_ms": 4.645,
+    "server_latency_ms": 1877.163,
+    "client_latency_ms": 2159,
+    "question_end_to_end_ms": 3008,
+    "gold_answers": [
+      "888 7th Avenue"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 76,
+    "question": "What is the name of the capital city of the country that the author of \"Sin City\" comes from?",
+    "prediction": "Insufficient information",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 575,
+    "resolver_latency_ms": 5.875,
+    "server_latency_ms": 1502.003,
+    "client_latency_ms": 1781,
+    "question_end_to_end_ms": 2370,
+    "gold_answers": [
+      "Lima"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 77,
+    "question": "What is the location of the headquarters of the company where Leonte Răutu worked?",
+    "prediction": "Ankara",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 1386,
+    "resolver_latency_ms": 3.515,
+    "server_latency_ms": 493.515,
+    "client_latency_ms": 775,
+    "question_end_to_end_ms": 2175,
+    "gold_answers": [
+      "Ankara"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 78,
+    "question": "Where was the birthplace of the founder of the institution that created Cardinal Stritch University?",
+    "prediction": "Unknown (the knowledge pool does not contain the birthplace of the founder of Methodism).",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1564,
+    "resolver_latency_ms": 4.519,
+    "server_latency_ms": 1699.519,
+    "client_latency_ms": 1986,
+    "question_end_to_end_ms": 3569,
+    "gold_answers": [
+      "Epworth"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 79,
+    "question": "What was the place of work of the individual who founded the religion that Justus Lipsius believed in?",
+    "prediction": "Not found in the knowledge pool.",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1684,
+    "resolver_latency_ms": 8.276,
+    "server_latency_ms": 2518.486,
+    "client_latency_ms": 2807,
+    "question_end_to_end_ms": 4512,
+    "gold_answers": [
+      "Edinburgh"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 80,
+    "question": "What is the name of the current head of government of the country where Leo Gordon holds citizenship?",
+    "prediction": "Ole Johan Vierdal",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 1246,
+    "resolver_latency_ms": 8.416,
+    "server_latency_ms": 1108.034,
+    "client_latency_ms": 1378,
+    "question_end_to_end_ms": 2643,
+    "gold_answers": [
+      "Ole Johan Vierdal"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 81,
+    "question": "What was the sport that Hines Ward competed in professionally?",
+    "prediction": "Not specified in the knowledge pool.",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1225,
+    "resolver_latency_ms": 2.03,
+    "server_latency_ms": 545.03,
+    "client_latency_ms": 822,
+    "question_end_to_end_ms": 2066,
+    "gold_answers": [
+      "field hockey"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 82,
+    "question": "In which continent is the location of the headquarters of Airbnb situated?",
+    "prediction": "North America",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 483,
+    "resolver_latency_ms": 1.464,
+    "server_latency_ms": 474.464,
+    "client_latency_ms": 750,
+    "question_end_to_end_ms": 1246,
+    "gold_answers": [
+      "Africa"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 83,
+    "question": "What is the place of death of the partner of Katherine Mansfield?",
+    "prediction": "Birmingham",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 855,
+    "resolver_latency_ms": 5.302,
+    "server_latency_ms": 2239.769,
+    "client_latency_ms": 2529,
+    "question_end_to_end_ms": 3400,
+    "gold_answers": [
+      "Birmingham"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 84,
+    "question": "Who is the highest-ranking official of the country that Władysław Anders holds a citizenship of?",
+    "prediction": "Not found in the knowledge pool.",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 2049,
+    "resolver_latency_ms": 3.404,
+    "server_latency_ms": 2074.379,
+    "client_latency_ms": 2363,
+    "question_end_to_end_ms": 4433,
+    "gold_answers": [
+      "Elizabeth II"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 85,
+    "question": "Which company, organization, or institution was responsible for the author of the Luther Bible?",
+    "prediction": "University of Wittenberg",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 850,
+    "resolver_latency_ms": 11.517,
+    "server_latency_ms": 1663.083,
+    "client_latency_ms": 1947,
+    "question_end_to_end_ms": 2810,
+    "gold_answers": [
+      "British Broadcasting Corporation"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 86,
+    "question": "What city serves as the capital of the country that Kelly McGillis is a citizen of?",
+    "prediction": "Vienna",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 720,
+    "resolver_latency_ms": 9.276,
+    "server_latency_ms": 2321.903,
+    "client_latency_ms": 3038,
+    "question_end_to_end_ms": 3777,
+    "gold_answers": [
+      "Vienna"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 87,
+    "question": "Who is the political leader of the country where the sport associated with Terry Collins was first practiced?",
+    "prediction": "Unknown (the knowledge pool does not contain information about the political leader of Japan).",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1432,
+    "resolver_latency_ms": 28.411,
+    "server_latency_ms": 3742.444,
+    "client_latency_ms": 4122,
+    "question_end_to_end_ms": 5567,
+    "gold_answers": [
+      "Shinzō Abe"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 88,
+    "question": "In which city was the person who founded the religion of Joseph de Maistre born?",
+    "prediction": "Epworth",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 2055,
+    "resolver_latency_ms": 8.892,
+    "server_latency_ms": 1970.6,
+    "client_latency_ms": 2433,
+    "question_end_to_end_ms": 4508,
+    "gold_answers": [
+      "Epworth"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 89,
+    "question": "What is the name of the person who directed/managed the original broadcaster of Agents of S.H.I.E.L.D.?",
+    "prediction": "Ernst Heinkel",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 613,
+    "resolver_latency_ms": 6.31,
+    "server_latency_ms": 1985.561,
+    "client_latency_ms": 2337,
+    "question_end_to_end_ms": 2969,
+    "gold_answers": [
+      "Ernst Heinkel"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 90,
+    "question": "In what city is located the capital of the country where the director/producer of the original broadcaster of \"The Addams Family\" holds a citizenship?",
+    "prediction": "Berlin",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 2184,
+    "resolver_latency_ms": 36.076,
+    "server_latency_ms": 3039.208,
+    "client_latency_ms": 3382,
+    "question_end_to_end_ms": 5581,
+    "gold_answers": [
+      "Berlin"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 91,
+    "question": "In which continent is the country of citizenship of Shaun Udal located?",
+    "prediction": "South America",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 787,
+    "resolver_latency_ms": 6.229,
+    "server_latency_ms": 1495.603,
+    "client_latency_ms": 1843,
+    "question_end_to_end_ms": 2649,
+    "gold_answers": [
+      "South America"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 92,
+    "question": "What was the work location of the creator of Claude Frollo?",
+    "prediction": "Unknown",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1097,
+    "resolver_latency_ms": 1.766,
+    "server_latency_ms": 460.766,
+    "client_latency_ms": 733,
+    "question_end_to_end_ms": 1851,
+    "gold_answers": [
+      "Austin"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 93,
+    "question": "In which language does the government of the country of citizenship of W. G. Sebald conduct official business?",
+    "prediction": "English",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 671,
+    "resolver_latency_ms": 4.551,
+    "server_latency_ms": 643.551,
+    "client_latency_ms": 929,
+    "question_end_to_end_ms": 1620,
+    "gold_answers": [
+      "English"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 94,
+    "question": "Which music style is performed by the artist who goes by the name of Will Schuester?",
+    "prediction": "Hip hop music",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 978,
+    "resolver_latency_ms": 4.042,
+    "server_latency_ms": 1716.165,
+    "client_latency_ms": 2047,
+    "question_end_to_end_ms": 3049,
+    "gold_answers": [
+      "hip hop music"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 95,
+    "question": "What is the country of origin of the sport associated with Gary SouthShore RailCats?",
+    "prediction": "United States of America",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 560,
+    "resolver_latency_ms": 7.661,
+    "server_latency_ms": 1025.036,
+    "client_latency_ms": 1310,
+    "question_end_to_end_ms": 1890,
+    "gold_answers": [
+      "Japan"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 96,
+    "question": "To which continent does the country of citizenship of the CEO of Telmex belong?",
+    "prediction": "Europe",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1004,
+    "resolver_latency_ms": 2.3,
+    "server_latency_ms": 597.3,
+    "client_latency_ms": 882,
+    "question_end_to_end_ms": 1907,
+    "gold_answers": [
+      "Africa"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 97,
+    "question": "In which capital is the headquarters of the company where the CEO of QuickTime developer holds the citizenship?",
+    "prediction": "New Delhi",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1339,
+    "resolver_latency_ms": 4.469,
+    "server_latency_ms": 499.469,
+    "client_latency_ms": 782,
+    "question_end_to_end_ms": 2134,
+    "gold_answers": [
+      "Tromsø municipality"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 98,
+    "question": "Which profession is associated with the partner/spouse of Lalu Prasad Yadav?",
+    "prediction": "Singer",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 853,
+    "resolver_latency_ms": 3.08,
+    "server_latency_ms": 1517.911,
+    "client_latency_ms": 1808,
+    "question_end_to_end_ms": 2676,
+    "gold_answers": [
+      "singer"
+    ]
+  },
+  {
+    "subset": "factconsolidation_mh_32k",
+    "index": 99,
+    "question": "From which country does the sport that Kenley Jansen specializes in originate?",
+    "prediction": "United States",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 932,
+    "resolver_latency_ms": 1.468,
+    "server_latency_ms": 501.468,
+    "client_latency_ms": 781,
+    "question_end_to_end_ms": 1726,
+    "gold_answers": [
+      "Indonesia"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 0,
+    "question": "Which sport is Salem-Keizer Volcanoes associated with?",
+    "prediction": "Basketball",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 600,
+    "resolver_latency_ms": 6.448,
+    "server_latency_ms": 397.448,
+    "client_latency_ms": 602,
+    "question_end_to_end_ms": 1202,
+    "gold_answers": [
+      "basketball"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 1,
+    "question": "What position does Nick Rimando play?",
+    "prediction": "Flanker",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 613,
+    "resolver_latency_ms": 1.774,
+    "server_latency_ms": 461.774,
+    "client_latency_ms": 660,
+    "question_end_to_end_ms": 1273,
+    "gold_answers": [
+      "flanker"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 2,
+    "question": "Which sport is power forward associated with?",
+    "prediction": "Rugby",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 705,
+    "resolver_latency_ms": 2.955,
+    "server_latency_ms": 769.955,
+    "client_latency_ms": 1010,
+    "question_end_to_end_ms": 1715,
+    "gold_answers": [
+      "rugby"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 3,
+    "question": "Which religion is Morris Iemma affiliated with?",
+    "prediction": "Methodism",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 666,
+    "resolver_latency_ms": 15.757,
+    "server_latency_ms": 456.757,
+    "client_latency_ms": 660,
+    "question_end_to_end_ms": 1326,
+    "gold_answers": [
+      "Methodism"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 4,
+    "question": "Which sport is FC Slutsk associated with?",
+    "prediction": "Association football",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 558,
+    "resolver_latency_ms": 28.331,
+    "server_latency_ms": 649.331,
+    "client_latency_ms": 856,
+    "question_end_to_end_ms": 1414,
+    "gold_answers": [
+      "association football"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 5,
+    "question": "What is the capital of United Kingdom?",
+    "prediction": "Rupnagar",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 1049,
+    "resolver_latency_ms": 7.261,
+    "server_latency_ms": 466.261,
+    "client_latency_ms": 675,
+    "question_end_to_end_ms": 1724,
+    "gold_answers": [
+      "Rupnagar"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 6,
+    "question": "What is the country of citizenship of Dan Christensen?",
+    "prediction": "United States of America",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 1413,
+    "resolver_latency_ms": 11.376,
+    "server_latency_ms": 462.376,
+    "client_latency_ms": 667,
+    "question_end_to_end_ms": 2080,
+    "gold_answers": [
+      "United States of America"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 7,
+    "question": "Who founded Montanism?",
+    "prediction": "Montanus of Phrygia",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 547,
+    "resolver_latency_ms": 2.713,
+    "server_latency_ms": 540.713,
+    "client_latency_ms": 752,
+    "question_end_to_end_ms": 1299,
+    "gold_answers": [
+      "Montanus of Phrygia"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 8,
+    "question": "Which city did Noel Pemberton Billing work in?",
+    "prediction": "Washington, D.C.",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 578,
+    "resolver_latency_ms": 1.9,
+    "server_latency_ms": 453.9,
+    "client_latency_ms": 964,
+    "question_end_to_end_ms": 1542,
+    "gold_answers": [
+      "London"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 9,
+    "question": "What is the capital of Papal States?",
+    "prediction": "Watertown",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 1022,
+    "resolver_latency_ms": 3.644,
+    "server_latency_ms": 599.644,
+    "client_latency_ms": 812,
+    "question_end_to_end_ms": 1835,
+    "gold_answers": [
+      "Rome"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 10,
+    "question": "What is the country of citizenship of Edmund Burke?",
+    "prediction": "Kingdom of Ireland",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 611,
+    "resolver_latency_ms": 1.555,
+    "server_latency_ms": 417.555,
+    "client_latency_ms": 624,
+    "question_end_to_end_ms": 1235,
+    "gold_answers": [
+      "Kingdom of Ireland"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 11,
+    "question": "What is the country of citizenship of Colin Irwin?",
+    "prediction": "Israel",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 896,
+    "resolver_latency_ms": 9.47,
+    "server_latency_ms": 571.47,
+    "client_latency_ms": 774,
+    "question_end_to_end_ms": 1670,
+    "gold_answers": [
+      "Israel"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 12,
+    "question": "Who is the developer of Apple DOS?",
+    "prediction": "Apple Inc.",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 902,
+    "resolver_latency_ms": 6.515,
+    "server_latency_ms": 452.515,
+    "client_latency_ms": 647,
+    "question_end_to_end_ms": 1550,
+    "gold_answers": [
+      "Apple Inc."
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 13,
+    "question": "Which sport is Gary SouthShore RailCats associated with?",
+    "prediction": "Baseball",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 768,
+    "resolver_latency_ms": 5.24,
+    "server_latency_ms": 527.24,
+    "client_latency_ms": 728,
+    "question_end_to_end_ms": 1496,
+    "gold_answers": [
+      "baseball"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 14,
+    "question": "Which city was Bachir Gemayel born in?",
+    "prediction": "Beirut",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 618,
+    "resolver_latency_ms": 2.295,
+    "server_latency_ms": 660.295,
+    "client_latency_ms": 864,
+    "question_end_to_end_ms": 1481,
+    "gold_answers": [
+      "Beirut"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 15,
+    "question": "What is the country of citizenship of Rick Remender?",
+    "prediction": "Italy",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 652,
+    "resolver_latency_ms": 12.035,
+    "server_latency_ms": 577.035,
+    "client_latency_ms": 791,
+    "question_end_to_end_ms": 1443,
+    "gold_answers": [
+      "Italy"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 16,
+    "question": "Which sport is Jeff Hornacek associated with?",
+    "prediction": "Association football",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 973,
+    "resolver_latency_ms": 23.043,
+    "server_latency_ms": 478.043,
+    "client_latency_ms": 703,
+    "question_end_to_end_ms": 1676,
+    "gold_answers": [
+      "association football"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 17,
+    "question": "Who is Charles Darwin married to?",
+    "prediction": "Amala Paul",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 621,
+    "resolver_latency_ms": 3.675,
+    "server_latency_ms": 418.675,
+    "client_latency_ms": 627,
+    "question_end_to_end_ms": 1248,
+    "gold_answers": [
+      "Amala Paul"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 18,
+    "question": "Who is the author of David Copperfield?",
+    "prediction": "Charles Darwin",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 649,
+    "resolver_latency_ms": 4.788,
+    "server_latency_ms": 423.788,
+    "client_latency_ms": 630,
+    "question_end_to_end_ms": 1279,
+    "gold_answers": [
+      "Charles Darwin"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 19,
+    "question": "Which religion is Maria Amalia of Naples and Sicily affiliated with?",
+    "prediction": "Church of Greece",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 617,
+    "resolver_latency_ms": 18.873,
+    "server_latency_ms": 462.873,
+    "client_latency_ms": 967,
+    "question_end_to_end_ms": 1584,
+    "gold_answers": [
+      "Church of Greece"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 20,
+    "question": "What position does Tony Parker play?",
+    "prediction": "Shooting guard",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 645,
+    "resolver_latency_ms": 1.737,
+    "server_latency_ms": 589.737,
+    "client_latency_ms": 792,
+    "question_end_to_end_ms": 1437,
+    "gold_answers": [
+      "shooting guard"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 21,
+    "question": "Which sport is flanker associated with?",
+    "prediction": "rugby",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 920,
+    "resolver_latency_ms": 2.339,
+    "server_latency_ms": 450.339,
+    "client_latency_ms": 962,
+    "question_end_to_end_ms": 1882,
+    "gold_answers": [
+      "rugby"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 22,
+    "question": "What language does Federico García Lorca speak?",
+    "prediction": "Spanish",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 559,
+    "resolver_latency_ms": 7.068,
+    "server_latency_ms": 681.068,
+    "client_latency_ms": 893,
+    "question_end_to_end_ms": 1452,
+    "gold_answers": [
+      "Spanish"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 23,
+    "question": "What is Stephen Crane famous for?",
+    "prediction": "Charlie Hebdo",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 1084,
+    "resolver_latency_ms": 2.376,
+    "server_latency_ms": 544.376,
+    "client_latency_ms": 760,
+    "question_end_to_end_ms": 1844,
+    "gold_answers": [
+      "Charlie Hebdo"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 24,
+    "question": "Who is Igor of Kiev married to?",
+    "prediction": "Olga of Kiev",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 651,
+    "resolver_latency_ms": 3.177,
+    "server_latency_ms": 505.177,
+    "client_latency_ms": 707,
+    "question_end_to_end_ms": 1358,
+    "gold_answers": [
+      "Olga of Kiev"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 25,
+    "question": "What is the country of citizenship of Robert Wisdom?",
+    "prediction": "United States of America",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 518,
+    "resolver_latency_ms": 5.704,
+    "server_latency_ms": 542.704,
+    "client_latency_ms": 745,
+    "question_end_to_end_ms": 1263,
+    "gold_answers": [
+      "United States of America"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 26,
+    "question": "What is the country of citizenship of Renaud Lavillenie?",
+    "prediction": "Ireland",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 625,
+    "resolver_latency_ms": 12.104,
+    "server_latency_ms": 581.104,
+    "client_latency_ms": 787,
+    "question_end_to_end_ms": 1411,
+    "gold_answers": [
+      "Ireland"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 27,
+    "question": "Which sport is midfielder associated with?",
+    "prediction": "Sumo",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 688,
+    "resolver_latency_ms": 2.391,
+    "server_latency_ms": 527.391,
+    "client_latency_ms": 732,
+    "question_end_to_end_ms": 1420,
+    "gold_answers": [
+      "sumo"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 28,
+    "question": "What is the country of citizenship of James Badge Dale?",
+    "prediction": "United States of America",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 814,
+    "resolver_latency_ms": 14.613,
+    "server_latency_ms": 429.613,
+    "client_latency_ms": 635,
+    "question_end_to_end_ms": 1450,
+    "gold_answers": [
+      "United States of America"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 29,
+    "question": "Which sport is Darryl Strawberry associated with?",
+    "prediction": "Baseball",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 516,
+    "resolver_latency_ms": 3.773,
+    "server_latency_ms": 430.773,
+    "client_latency_ms": 629,
+    "question_end_to_end_ms": 1146,
+    "gold_answers": [
+      "baseball"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 30,
+    "question": "Which company is Apple TV produced by?",
+    "prediction": "Apple Inc.",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 472,
+    "resolver_latency_ms": 3.465,
+    "server_latency_ms": 946.465,
+    "client_latency_ms": 1160,
+    "question_end_to_end_ms": 1633,
+    "gold_answers": [
+      "Apple Inc."
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 31,
+    "question": "Which city is the headquarter of Microsoft located in?",
+    "prediction": "Beverly Hills",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 610,
+    "resolver_latency_ms": 5.415,
+    "server_latency_ms": 498.415,
+    "client_latency_ms": 872,
+    "question_end_to_end_ms": 1482,
+    "gold_answers": [
+      "Beverly Hills"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 32,
+    "question": "Which religion is Catholic bishop affiliated with?",
+    "prediction": "Catholicism",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 596,
+    "resolver_latency_ms": 4.96,
+    "server_latency_ms": 457.96,
+    "client_latency_ms": 663,
+    "question_end_to_end_ms": 1258,
+    "gold_answers": [
+      "Catholicism"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 33,
+    "question": "Which city did William Holman Hunt die in?",
+    "prediction": "Washington, D.C.",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 578,
+    "resolver_latency_ms": 8.778,
+    "server_latency_ms": 447.778,
+    "client_latency_ms": 651,
+    "question_end_to_end_ms": 1228,
+    "gold_answers": [
+      "Washington, D.C."
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 34,
+    "question": "What is the country of citizenship of Travis Barker?",
+    "prediction": "United States of America",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 659,
+    "resolver_latency_ms": 14.016,
+    "server_latency_ms": 541.016,
+    "client_latency_ms": 745,
+    "question_end_to_end_ms": 1404,
+    "gold_answers": [
+      "United States of America"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 35,
+    "question": "Which sport is Burleigh Grimes associated with?",
+    "prediction": "Baseball",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 469,
+    "resolver_latency_ms": 4.05,
+    "server_latency_ms": 414.05,
+    "client_latency_ms": 617,
+    "question_end_to_end_ms": 1086,
+    "gold_answers": [
+      "baseball"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 36,
+    "question": "Which university was Hrishikesh Mukherjee educated at?",
+    "prediction": "University of Calcutta",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 544,
+    "resolver_latency_ms": 3.866,
+    "server_latency_ms": 509.866,
+    "client_latency_ms": 744,
+    "question_end_to_end_ms": 1289,
+    "gold_answers": [
+      "University of Calcutta"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 37,
+    "question": "Who is the original broadcaster of Parenthood?",
+    "prediction": "NBC",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 553,
+    "resolver_latency_ms": 1.741,
+    "server_latency_ms": 722.741,
+    "client_latency_ms": 945,
+    "question_end_to_end_ms": 1498,
+    "gold_answers": [
+      "NBC"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 38,
+    "question": "What position does Lisa Leslie play?",
+    "prediction": "Goaltender",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 584,
+    "resolver_latency_ms": 1.829,
+    "server_latency_ms": 488.829,
+    "client_latency_ms": 717,
+    "question_end_to_end_ms": 1301,
+    "gold_answers": [
+      "goaltender"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 39,
+    "question": "What is the capital of Iran?",
+    "prediction": "Tehran",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 584,
+    "resolver_latency_ms": 1.482,
+    "server_latency_ms": 464.482,
+    "client_latency_ms": 675,
+    "question_end_to_end_ms": 1259,
+    "gold_answers": [
+      "Tehran"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 40,
+    "question": "Who is the original broadcaster of The Drew Carey Show?",
+    "prediction": "American Broadcasting Company",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 609,
+    "resolver_latency_ms": 13.461,
+    "server_latency_ms": 474.461,
+    "client_latency_ms": 673,
+    "question_end_to_end_ms": 1282,
+    "gold_answers": [
+      "American Broadcasting Company"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 41,
+    "question": "Who is the chief executive officer of Apple Inc.?",
+    "prediction": "Vijay Mallya",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 728,
+    "resolver_latency_ms": 3.283,
+    "server_latency_ms": 553.283,
+    "client_latency_ms": 757,
+    "question_end_to_end_ms": 1486,
+    "gold_answers": [
+      "Vijay Mallya"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 42,
+    "question": "What kind of work does Sabbatai Zevi do?",
+    "prediction": "superhero",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 598,
+    "resolver_latency_ms": 2.084,
+    "server_latency_ms": 546.084,
+    "client_latency_ms": 750,
+    "question_end_to_end_ms": 1348,
+    "gold_answers": [
+      "superhero"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 43,
+    "question": "What is the country of citizenship of Lionel Richie?",
+    "prediction": "Ghana",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 675,
+    "resolver_latency_ms": 4.928,
+    "server_latency_ms": 440.928,
+    "client_latency_ms": 639,
+    "question_end_to_end_ms": 1314,
+    "gold_answers": [
+      "Ghana"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 44,
+    "question": "Which religion is Tom Cruise affiliated with?",
+    "prediction": "Scientology",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 578,
+    "resolver_latency_ms": 3.796,
+    "server_latency_ms": 645.796,
+    "client_latency_ms": 844,
+    "question_end_to_end_ms": 1422,
+    "gold_answers": [
+      "Scientology"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 45,
+    "question": "Which company is Ford F-Series produced by?",
+    "prediction": "Ford Motor Company",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 648,
+    "resolver_latency_ms": 6.832,
+    "server_latency_ms": 744.832,
+    "client_latency_ms": 966,
+    "question_end_to_end_ms": 1614,
+    "gold_answers": [
+      "Ford Motor Company"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 46,
+    "question": "Who is the author of Inuyasha?",
+    "prediction": "Terrance Dicks",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 526,
+    "resolver_latency_ms": 3.25,
+    "server_latency_ms": 619.25,
+    "client_latency_ms": 840,
+    "question_end_to_end_ms": 1366,
+    "gold_answers": [
+      "Terrance Dicks"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 47,
+    "question": "Which continent is San Francisco located in?",
+    "prediction": "Africa",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 653,
+    "resolver_latency_ms": 7.915,
+    "server_latency_ms": 509.915,
+    "client_latency_ms": 713,
+    "question_end_to_end_ms": 1367,
+    "gold_answers": [
+      "Africa"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 48,
+    "question": "Which sport is Terry Collins associated with?",
+    "prediction": "Baseball",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 540,
+    "resolver_latency_ms": 2.892,
+    "server_latency_ms": 504.892,
+    "client_latency_ms": 704,
+    "question_end_to_end_ms": 1244,
+    "gold_answers": [
+      "baseball"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 49,
+    "question": "Which sport is 2009 Six Nations Championship associated with?",
+    "prediction": "association football",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 836,
+    "resolver_latency_ms": 31.077,
+    "server_latency_ms": 563.077,
+    "client_latency_ms": 765,
+    "question_end_to_end_ms": 1601,
+    "gold_answers": [
+      "association football"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 50,
+    "question": "What position does Vernon Davis play?",
+    "prediction": "Defensive end",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 623,
+    "resolver_latency_ms": 1.784,
+    "server_latency_ms": 373.784,
+    "client_latency_ms": 574,
+    "question_end_to_end_ms": 1196,
+    "gold_answers": [
+      "defensive end"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 51,
+    "question": "What is the name of the current head of state in Ireland?",
+    "prediction": "Roch Marc Christian Kaboré",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 564,
+    "resolver_latency_ms": 10.668,
+    "server_latency_ms": 485.668,
+    "client_latency_ms": 689,
+    "question_end_to_end_ms": 1253,
+    "gold_answers": [
+      "Roch Marc Christian Kaboré"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 52,
+    "question": "Who performed Past Masters?",
+    "prediction": "Madonna",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 670,
+    "resolver_latency_ms": 7.048,
+    "server_latency_ms": 673.048,
+    "client_latency_ms": 890,
+    "question_end_to_end_ms": 1561,
+    "gold_answers": [
+      "Madonna"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 53,
+    "question": "Which sport is Imran Khan associated with?",
+    "prediction": "association football",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 564,
+    "resolver_latency_ms": 22.174,
+    "server_latency_ms": 694.174,
+    "client_latency_ms": 896,
+    "question_end_to_end_ms": 1461,
+    "gold_answers": [
+      "association football"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 54,
+    "question": "What is the country of citizenship of Tomoyasu Hotei?",
+    "prediction": "Germany",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 648,
+    "resolver_latency_ms": 9.921,
+    "server_latency_ms": 466.921,
+    "client_latency_ms": 667,
+    "question_end_to_end_ms": 1315,
+    "gold_answers": [
+      "Germany"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 55,
+    "question": "What language does Matti Vanhanen speak?",
+    "prediction": "Finnish",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 512,
+    "resolver_latency_ms": 2.679,
+    "server_latency_ms": 620.679,
+    "client_latency_ms": 823,
+    "question_end_to_end_ms": 1334,
+    "gold_answers": [
+      "Finnish"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 56,
+    "question": "Who founded Transcendental Meditation movement?",
+    "prediction": "Adalbert of Prague",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 591,
+    "resolver_latency_ms": 2.336,
+    "server_latency_ms": 472.336,
+    "client_latency_ms": 673,
+    "question_end_to_end_ms": 1265,
+    "gold_answers": [
+      "Adalbert of Prague"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 57,
+    "question": "What is the name of the current head of state in United States of America?",
+    "prediction": "Connachta",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 766,
+    "resolver_latency_ms": 5.452,
+    "server_latency_ms": 576.452,
+    "client_latency_ms": 766,
+    "question_end_to_end_ms": 1532,
+    "gold_answers": [
+      "Connachta"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 58,
+    "question": "Who is the developer of AppleScript?",
+    "prediction": "Apple Inc.",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 469,
+    "resolver_latency_ms": 6.392,
+    "server_latency_ms": 411.392,
+    "client_latency_ms": 613,
+    "question_end_to_end_ms": 1082,
+    "gold_answers": [
+      "Apple Inc."
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 59,
+    "question": "Which continent is Philippines located in?",
+    "prediction": "Asia",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 511,
+    "resolver_latency_ms": 9.518,
+    "server_latency_ms": 351.518,
+    "client_latency_ms": 558,
+    "question_end_to_end_ms": 1069,
+    "gold_answers": [
+      "Asia"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 60,
+    "question": "Who is the author of The Great Movies?",
+    "prediction": "John Evelyn",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 741,
+    "resolver_latency_ms": 3.349,
+    "server_latency_ms": 875.349,
+    "client_latency_ms": 1089,
+    "question_end_to_end_ms": 1831,
+    "gold_answers": [
+      "John Evelyn"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 61,
+    "question": "Which university was Chicago Boys educated at?",
+    "prediction": "Yale University",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 559,
+    "resolver_latency_ms": 5.67,
+    "server_latency_ms": 585.67,
+    "client_latency_ms": 787,
+    "question_end_to_end_ms": 1346,
+    "gold_answers": [
+      "Yale University"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 62,
+    "question": "What is the country of citizenship of Andrew Carnegie?",
+    "prediction": "United Kingdom",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 741,
+    "resolver_latency_ms": 15.129,
+    "server_latency_ms": 498.129,
+    "client_latency_ms": 698,
+    "question_end_to_end_ms": 1439,
+    "gold_answers": [
+      "United Kingdom"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 63,
+    "question": "Who is Kristen Bell married to?",
+    "prediction": "Dax Shepard",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 649,
+    "resolver_latency_ms": 2.021,
+    "server_latency_ms": 565.021,
+    "client_latency_ms": 766,
+    "question_end_to_end_ms": 1415,
+    "gold_answers": [
+      "Dax Shepard"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 64,
+    "question": "What is William Gibson famous for?",
+    "prediction": "Neuromancer",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 604,
+    "resolver_latency_ms": 2.11,
+    "server_latency_ms": 478.11,
+    "client_latency_ms": 680,
+    "question_end_to_end_ms": 1284,
+    "gold_answers": [
+      "Neuromancer"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 65,
+    "question": "Which religion is Bahawalpur State affiliated with?",
+    "prediction": "Catholic Church",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 748,
+    "resolver_latency_ms": 10.455,
+    "server_latency_ms": 429.455,
+    "client_latency_ms": 631,
+    "question_end_to_end_ms": 1379,
+    "gold_answers": [
+      "Catholic Church"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 66,
+    "question": "Who is the chief executive officer of Advanced Micro Devices?",
+    "prediction": "Sundar Pichai",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 815,
+    "resolver_latency_ms": 4.101,
+    "server_latency_ms": 614.101,
+    "client_latency_ms": 811,
+    "question_end_to_end_ms": 1625,
+    "gold_answers": [
+      "Sundar Pichai"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 67,
+    "question": "What is the country of citizenship of Sue Grafton?",
+    "prediction": "Ukraine",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 722,
+    "resolver_latency_ms": 9.991,
+    "server_latency_ms": 886.991,
+    "client_latency_ms": 1126,
+    "question_end_to_end_ms": 1848,
+    "gold_answers": [
+      "Ukraine"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 68,
+    "question": "Who is the developer of Internet Explorer 5?",
+    "prediction": "Google",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 566,
+    "resolver_latency_ms": 11.13,
+    "server_latency_ms": 381.13,
+    "client_latency_ms": 586,
+    "question_end_to_end_ms": 1152,
+    "gold_answers": [
+      "Google"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 69,
+    "question": "Who is the author of The Marriage of Figaro?",
+    "prediction": "Thomas Kyd",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 645,
+    "resolver_latency_ms": 2.388,
+    "server_latency_ms": 464.388,
+    "client_latency_ms": 667,
+    "question_end_to_end_ms": 1311,
+    "gold_answers": [
+      "Thomas Kyd"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 70,
+    "question": "Who is the author of The Age of Reason?",
+    "prediction": "Allen Ginsberg",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 507,
+    "resolver_latency_ms": 3.137,
+    "server_latency_ms": 601.137,
+    "client_latency_ms": 796,
+    "question_end_to_end_ms": 1303,
+    "gold_answers": [
+      "Allen Ginsberg"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 71,
+    "question": "What language does Daphne du Maurier speak?",
+    "prediction": "Arabic",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 761,
+    "resolver_latency_ms": 16.956,
+    "server_latency_ms": 456.956,
+    "client_latency_ms": 669,
+    "question_end_to_end_ms": 1430,
+    "gold_answers": [
+      "Arabic"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 72,
+    "question": "Which city is the headquarter of MTV located in?",
+    "prediction": "London",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 571,
+    "resolver_latency_ms": 7.75,
+    "server_latency_ms": 499.75,
+    "client_latency_ms": 720,
+    "question_end_to_end_ms": 1291,
+    "gold_answers": [
+      "London"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 73,
+    "question": "Who was Malvolio created by?",
+    "prediction": "William Shakespeare",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 561,
+    "resolver_latency_ms": 2.99,
+    "server_latency_ms": 518.99,
+    "client_latency_ms": 731,
+    "question_end_to_end_ms": 1292,
+    "gold_answers": [
+      "William Shakespeare"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 74,
+    "question": "What type of music does Nat King Cole play?",
+    "prediction": "J-pop",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 1201,
+    "resolver_latency_ms": 3.516,
+    "server_latency_ms": 945.516,
+    "client_latency_ms": 1152,
+    "question_end_to_end_ms": 2353,
+    "gold_answers": [
+      "J-pop"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 75,
+    "question": "Who is the developer of Unreal Tournament 2004?",
+    "prediction": "Epic Games",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 1359,
+    "resolver_latency_ms": 3.531,
+    "server_latency_ms": 505.531,
+    "client_latency_ms": 710,
+    "question_end_to_end_ms": 2069,
+    "gold_answers": [
+      "Epic Games"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 76,
+    "question": "Which country was heartland rock created in?",
+    "prediction": "Scotland",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 654,
+    "resolver_latency_ms": 2.446,
+    "server_latency_ms": 381.446,
+    "client_latency_ms": 584,
+    "question_end_to_end_ms": 1238,
+    "gold_answers": [
+      "Scotland"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 77,
+    "question": "What is the country of citizenship of Cédric Klapisch?",
+    "prediction": "Malaysia",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 592,
+    "resolver_latency_ms": 6.798,
+    "server_latency_ms": 478.798,
+    "client_latency_ms": 685,
+    "question_end_to_end_ms": 1278,
+    "gold_answers": [
+      "Malaysia"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 78,
+    "question": "Who founded Jaguar Cars?",
+    "prediction": "Eugène Schneider",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 555,
+    "resolver_latency_ms": 2.268,
+    "server_latency_ms": 428.268,
+    "client_latency_ms": 630,
+    "question_end_to_end_ms": 1185,
+    "gold_answers": [
+      "Eugène Schneider"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 79,
+    "question": "Which sport is Sports Interactive associated with?",
+    "prediction": "Basketball",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 478,
+    "resolver_latency_ms": 28.536,
+    "server_latency_ms": 619.536,
+    "client_latency_ms": 821,
+    "question_end_to_end_ms": 1299,
+    "gold_answers": [
+      "basketball"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 80,
+    "question": "Which country was Sigur Rós created in?",
+    "prediction": "Israel",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 506,
+    "resolver_latency_ms": 2.125,
+    "server_latency_ms": 456.125,
+    "client_latency_ms": 655,
+    "question_end_to_end_ms": 1161,
+    "gold_answers": [
+      "Israel"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 81,
+    "question": "Which country was pesäpallo created in?",
+    "prediction": "Not found in the knowledge pool.",
+    "correct": false,
+    "failure": null,
+    "answer_latency_ms": 644,
+    "resolver_latency_ms": 2.132,
+    "server_latency_ms": 664.132,
+    "client_latency_ms": 869,
+    "question_end_to_end_ms": 1512,
+    "gold_answers": [
+      "Philippines"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 82,
+    "question": "Who was Kinsey Millhone created by?",
+    "prediction": "Sue Grafton",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 544,
+    "resolver_latency_ms": 1.976,
+    "server_latency_ms": 638.976,
+    "client_latency_ms": 858,
+    "question_end_to_end_ms": 1403,
+    "gold_answers": [
+      "Sue Grafton"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 83,
+    "question": "What is the country of citizenship of Madame du Barry?",
+    "prediction": "Great Britain",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 597,
+    "resolver_latency_ms": 14.019,
+    "server_latency_ms": 396.019,
+    "client_latency_ms": 602,
+    "question_end_to_end_ms": 1199,
+    "gold_answers": [
+      "Great Britain"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 84,
+    "question": "Which language was The Thorn Birds written in?",
+    "prediction": "French",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 626,
+    "resolver_latency_ms": 20.444,
+    "server_latency_ms": 625.444,
+    "client_latency_ms": 826,
+    "question_end_to_end_ms": 1452,
+    "gold_answers": [
+      "French"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 85,
+    "question": "Who is the head coach of Los Angeles FC?",
+    "prediction": "Bob Bradley",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 534,
+    "resolver_latency_ms": 4.426,
+    "server_latency_ms": 410.426,
+    "client_latency_ms": 612,
+    "question_end_to_end_ms": 1146,
+    "gold_answers": [
+      "Bob Bradley"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 86,
+    "question": "Which company is Buick Regal produced by?",
+    "prediction": "Aston Martin Lagonda",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 728,
+    "resolver_latency_ms": 8.852,
+    "server_latency_ms": 371.852,
+    "client_latency_ms": 573,
+    "question_end_to_end_ms": 1301,
+    "gold_answers": [
+      "Aston Martin Lagonda"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 87,
+    "question": "Which religion is Natalie Portman affiliated with?",
+    "prediction": "Interdenominational organization",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 694,
+    "resolver_latency_ms": 2.872,
+    "server_latency_ms": 571.872,
+    "client_latency_ms": 772,
+    "question_end_to_end_ms": 1465,
+    "gold_answers": [
+      "interdenominational organization"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 88,
+    "question": "Who was Finnish created by?",
+    "prediction": "Stirling Silliphanta",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 638,
+    "resolver_latency_ms": 7.094,
+    "server_latency_ms": 513.094,
+    "client_latency_ms": 722,
+    "question_end_to_end_ms": 1359,
+    "gold_answers": [
+      "Stirling Silliphanta"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 89,
+    "question": "What position does Artur Boruc play?",
+    "prediction": "Midfielder",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 741,
+    "resolver_latency_ms": 1.745,
+    "server_latency_ms": 771.745,
+    "client_latency_ms": 986,
+    "question_end_to_end_ms": 1727,
+    "gold_answers": [
+      "midfielder"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 90,
+    "question": "What is the country of citizenship of Ada Wong?",
+    "prediction": "United States of America",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 484,
+    "resolver_latency_ms": 6.777,
+    "server_latency_ms": 431.777,
+    "client_latency_ms": 636,
+    "question_end_to_end_ms": 1120,
+    "gold_answers": [
+      "United States of America"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 91,
+    "question": "Who is Lalu Prasad Yadav married to?",
+    "prediction": "Goldust",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 559,
+    "resolver_latency_ms": 2.08,
+    "server_latency_ms": 431.08,
+    "client_latency_ms": 631,
+    "question_end_to_end_ms": 1190,
+    "gold_answers": [
+      "Goldust"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 92,
+    "question": "Which company is Ford S-Max produced by?",
+    "prediction": "Blue Origin",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 819,
+    "resolver_latency_ms": 6.851,
+    "server_latency_ms": 395.851,
+    "client_latency_ms": 597,
+    "question_end_to_end_ms": 1415,
+    "gold_answers": [
+      "Blue Origin"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 93,
+    "question": "Which country was Orkneyinga saga created in?",
+    "prediction": "Iceland",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 496,
+    "resolver_latency_ms": 2.56,
+    "server_latency_ms": 440.56,
+    "client_latency_ms": 648,
+    "question_end_to_end_ms": 1144,
+    "gold_answers": [
+      "Iceland"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 94,
+    "question": "Which sport is shooting guard associated with?",
+    "prediction": "Rugby",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 766,
+    "resolver_latency_ms": 2.445,
+    "server_latency_ms": 373.445,
+    "client_latency_ms": 577,
+    "question_end_to_end_ms": 1342,
+    "gold_answers": [
+      "rugby"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 95,
+    "question": "What is the country of citizenship of Henri Grégoire?",
+    "prediction": "India",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 631,
+    "resolver_latency_ms": 9.837,
+    "server_latency_ms": 492.837,
+    "client_latency_ms": 697,
+    "question_end_to_end_ms": 1329,
+    "gold_answers": [
+      "India"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 96,
+    "question": "Which city was Constantine VII born in?",
+    "prediction": "Constantinople",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 565,
+    "resolver_latency_ms": 5.658,
+    "server_latency_ms": 555.658,
+    "client_latency_ms": 777,
+    "question_end_to_end_ms": 1341,
+    "gold_answers": [
+      "Constantinople"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 97,
+    "question": "What is the country of citizenship of Wilhelm von Humboldt?",
+    "prediction": "Germany",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 589,
+    "resolver_latency_ms": 14.463,
+    "server_latency_ms": 497.463,
+    "client_latency_ms": 710,
+    "question_end_to_end_ms": 1299,
+    "gold_answers": [
+      "Germany"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 98,
+    "question": "What is the name of the current head of the South Korea government?",
+    "prediction": "Mauro Carlesse",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 686,
+    "resolver_latency_ms": 4.931,
+    "server_latency_ms": 437.931,
+    "client_latency_ms": 638,
+    "question_end_to_end_ms": 1324,
+    "gold_answers": [
+      "Mauro Carlesse"
+    ]
+  },
+  {
+    "subset": "factconsolidation_sh_32k",
+    "index": 99,
+    "question": "What position does David Seaman play?",
+    "prediction": "Midfielder",
+    "correct": true,
+    "failure": null,
+    "answer_latency_ms": 557,
+    "resolver_latency_ms": 1.832,
+    "server_latency_ms": 500.832,
+    "client_latency_ms": 700,
+    "question_end_to_end_ms": 1257,
+    "gold_answers": [
+      "midfielder"
+    ]
+  }
+]

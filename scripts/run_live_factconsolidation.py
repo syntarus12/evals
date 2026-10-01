@@ -22,7 +22,7 @@ from typing import Any
 
 DEFAULT_API_BASE = "https://ai.syntarus.com/syntarus-api/v1"
 DEFAULT_SARVAM_BASE = "https://api.sarvam.ai/v2"
-DEFAULT_BUILD = "10930cca71055a9a9e9cb83b45e25fe8a1903a63"
+DEFAULT_BUILD = "cb093372018957b672cd5d08f34d60a33ae3fe00"
 MEMORY_ACK = "I'll make sure to add the content into the memory."
 FIXED_CURRENT_TIME = "2024-01-01 00:00:00"
 OFFICIAL_PROMPT = (
@@ -232,6 +232,8 @@ async def answer_question(client: Any, model_name: str, question: str, state_car
     content = (getattr(getattr(choice, "message", None), "content", None) or "").strip()
     if not content:
         raise RuntimeError("Sarvam returned no visible answer text")
+    if getattr(choice, "finish_reason", None) != "stop":
+        raise RuntimeError("Sarvam returned an incomplete or truncated answer")
     return content, (time.perf_counter() - started) * 1000
 
 

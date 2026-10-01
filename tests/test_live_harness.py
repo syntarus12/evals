@@ -2,6 +2,7 @@ import importlib.util
 import sys
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -35,6 +36,29 @@ class LiveHarnessTests(unittest.TestCase):
         self.assertEqual(len(cases[0].questions), 100)
         self.assertEqual(len(cases[1].questions), 100)
         self.assertEqual(len(digest), 64)
+
+
+class AnswerCompletenessTests(unittest.IsolatedAsyncioTestCase):
+    @staticmethod
+    def client(content, finish_reason):
+        async def create(**kwargs):
+            return SimpleNamespace(choices=[SimpleNamespace(
+                message=SimpleNamespace(content=content), finish_reason=finish_reason
+            )])
+        return SimpleNamespace(chat=SimpleNamespace(completions=SimpleNamespace(create=create)))
+
+    async def test_truncated_visible_answer_is_rejected(self):
+        with self.assertRaisesRegex(RuntimeError, "incomplete or truncated"):
+            await MODULE.answer_question(self.client("Taipei", "length"), "glm5.3", "Question", "Evidence")
+
+    async def test_missing_visible_answer_is_rejected(self):
+        with self.assertRaisesRegex(RuntimeError, "no visible"):
+            await MODULE.answer_question(self.client("", "stop"), "glm5.3", "Question", "Evidence")
+
+    async def test_complete_answer_is_accepted(self):
+        answer, elapsed = await MODULE.answer_question(self.client("Taipei", "stop"), "glm5.3", "Question", "Evidence")
+        self.assertEqual(answer, "Taipei")
+        self.assertGreaterEqual(elapsed, 0)
 
 
 if __name__ == "__main__":

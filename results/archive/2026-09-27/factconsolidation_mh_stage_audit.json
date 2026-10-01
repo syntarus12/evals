@@ -1,30 +1,35 @@
 {
-  "run_date_utc": "2026-09-28",
-  "production_build": "cb093372018957b672cd5d08f34d60a33ae3fe00",
+  "benchmark": "MemoryAgentBench FactConsolidation 32K multi-hop",
+  "subset": "factconsolidation_mh_32k",
   "question_count": 100,
-  "classification_method": "normalized_answer_text_across_all_recorded_hops",
+  "classification_method": "normalized_answer_text_only",
   "counts_by_stage": {
     "answer_visible_in_state_card": {
-      "total": 62,
-      "correct": 56,
-      "incorrect": 6
+      "total": 33,
+      "correct": 30,
+      "incorrect": 3
     },
     "not_in_retrieval_candidates": {
-      "total": 21,
-      "correct": 1,
-      "incorrect": 20
+      "total": 47,
+      "correct": 12,
+      "incorrect": 35
     },
     "lost_during_resolution": {
-      "total": 13,
-      "correct": 0,
-      "incorrect": 13
+      "total": 17,
+      "correct": 1,
+      "incorrect": 16
     },
     "lost_at_candidate_selection": {
-      "total": 4,
+      "total": 3,
       "correct": 0,
-      "incorrect": 4
+      "incorrect": 3
     }
   },
+  "limitations": [
+    "Categories are based on literal normalized answer-text presence across diagnostic candidate/card stages, not complete source-to-answer chain provenance.",
+    "All 100 cases used normalized_answer_text_only; source-fact-ID provenance was unavailable in this audit.",
+    "A literal match is not proof that the full reasoning chain was present; absence of a literal match can miss paraphrases or correct model priors."
+  ],
   "cases": [
     {
       "index": 0,
@@ -42,10 +47,10 @@
     },
     {
       "index": 2,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
-      "answer_visible_in_state_card": true,
-      "scored_correct": true
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
     },
     {
       "index": 3,
@@ -91,14 +96,14 @@
     },
     {
       "index": 9,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
-      "answer_visible_in_state_card": true,
-      "scored_correct": true
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
     },
     {
       "index": 10,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
       "answer_visible_in_state_card": true,
       "scored_correct": true
@@ -115,7 +120,7 @@
       "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
       "answer_visible_in_state_card": false,
-      "scored_correct": true
+      "scored_correct": false
     },
     {
       "index": 13,
@@ -147,7 +152,7 @@
     },
     {
       "index": 17,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
       "answer_visible_in_state_card": true,
       "scored_correct": true
@@ -171,7 +176,7 @@
       "stage": "answer_visible_in_state_card",
       "matching_mode": "normalized_answer_text_only",
       "answer_visible_in_state_card": true,
-      "scored_correct": false
+      "scored_correct": true
     },
     {
       "index": 21,
@@ -189,10 +194,10 @@
     },
     {
       "index": 23,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
-      "answer_visible_in_state_card": true,
-      "scored_correct": true
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
     },
     {
       "index": 24,
@@ -203,24 +208,24 @@
     },
     {
       "index": 25,
-      "stage": "answer_visible_in_state_card",
+      "stage": "lost_during_resolution",
       "matching_mode": "normalized_answer_text_only",
-      "answer_visible_in_state_card": true,
-      "scored_correct": true
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
     },
     {
       "index": 26,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
       "answer_visible_in_state_card": true,
       "scored_correct": true
     },
     {
       "index": 27,
-      "stage": "lost_during_resolution",
+      "stage": "answer_visible_in_state_card",
       "matching_mode": "normalized_answer_text_only",
-      "answer_visible_in_state_card": false,
-      "scored_correct": false
+      "answer_visible_in_state_card": true,
+      "scored_correct": true
     },
     {
       "index": 28,
@@ -231,10 +236,10 @@
     },
     {
       "index": 29,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
-      "answer_visible_in_state_card": true,
-      "scored_correct": true
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
     },
     {
       "index": 30,
@@ -266,31 +271,31 @@
     },
     {
       "index": 34,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
       "answer_visible_in_state_card": true,
       "scored_correct": true
     },
     {
       "index": 35,
-      "stage": "answer_visible_in_state_card",
+      "stage": "lost_during_resolution",
       "matching_mode": "normalized_answer_text_only",
-      "answer_visible_in_state_card": true,
-      "scored_correct": true
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
     },
     {
       "index": 36,
       "stage": "answer_visible_in_state_card",
       "matching_mode": "normalized_answer_text_only",
       "answer_visible_in_state_card": true,
-      "scored_correct": false
+      "scored_correct": true
     },
     {
       "index": 37,
       "stage": "lost_during_resolution",
       "matching_mode": "normalized_answer_text_only",
       "answer_visible_in_state_card": false,
-      "scored_correct": false
+      "scored_correct": true
     },
     {
       "index": 38,
@@ -308,10 +313,10 @@
     },
     {
       "index": 40,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
-      "answer_visible_in_state_card": true,
-      "scored_correct": true
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
     },
     {
       "index": 41,
@@ -322,14 +327,14 @@
     },
     {
       "index": 42,
-      "stage": "answer_visible_in_state_card",
+      "stage": "lost_at_candidate_selection",
       "matching_mode": "normalized_answer_text_only",
-      "answer_visible_in_state_card": true,
+      "answer_visible_in_state_card": false,
       "scored_correct": false
     },
     {
       "index": 43,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
       "answer_visible_in_state_card": true,
       "scored_correct": true
@@ -339,7 +344,7 @@
       "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
       "answer_visible_in_state_card": false,
-      "scored_correct": false
+      "scored_correct": true
     },
     {
       "index": 45,
@@ -371,7 +376,7 @@
     },
     {
       "index": 49,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
       "answer_visible_in_state_card": true,
       "scored_correct": true
@@ -385,7 +390,7 @@
     },
     {
       "index": 51,
-      "stage": "lost_at_candidate_selection",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
       "answer_visible_in_state_card": false,
       "scored_correct": false
@@ -406,10 +411,10 @@
     },
     {
       "index": 54,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
-      "answer_visible_in_state_card": true,
-      "scored_correct": true
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
     },
     {
       "index": 55,
@@ -420,21 +425,21 @@
     },
     {
       "index": 56,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
-      "answer_visible_in_state_card": true,
-      "scored_correct": true
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
     },
     {
       "index": 57,
-      "stage": "answer_visible_in_state_card",
+      "stage": "lost_during_resolution",
       "matching_mode": "normalized_answer_text_only",
-      "answer_visible_in_state_card": true,
-      "scored_correct": true
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
     },
     {
       "index": 58,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
       "answer_visible_in_state_card": true,
       "scored_correct": true
@@ -448,10 +453,10 @@
     },
     {
       "index": 60,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
-      "answer_visible_in_state_card": true,
-      "scored_correct": true
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
     },
     {
       "index": 61,
@@ -462,10 +467,10 @@
     },
     {
       "index": 62,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
-      "answer_visible_in_state_card": true,
-      "scored_correct": true
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
     },
     {
       "index": 63,
@@ -476,17 +481,17 @@
     },
     {
       "index": 64,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
       "answer_visible_in_state_card": true,
       "scored_correct": true
     },
     {
       "index": 65,
-      "stage": "answer_visible_in_state_card",
+      "stage": "lost_during_resolution",
       "matching_mode": "normalized_answer_text_only",
-      "answer_visible_in_state_card": true,
-      "scored_correct": true
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
     },
     {
       "index": 66,
@@ -528,7 +533,7 @@
       "stage": "answer_visible_in_state_card",
       "matching_mode": "normalized_answer_text_only",
       "answer_visible_in_state_card": true,
-      "scored_correct": true
+      "scored_correct": false
     },
     {
       "index": 72,
@@ -553,10 +558,10 @@
     },
     {
       "index": 75,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
-      "answer_visible_in_state_card": true,
-      "scored_correct": true
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
     },
     {
       "index": 76,
@@ -602,24 +607,24 @@
     },
     {
       "index": 82,
-      "stage": "answer_visible_in_state_card",
+      "stage": "lost_during_resolution",
       "matching_mode": "normalized_answer_text_only",
-      "answer_visible_in_state_card": true,
-      "scored_correct": true
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
     },
     {
       "index": 83,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
       "answer_visible_in_state_card": true,
       "scored_correct": true
     },
     {
       "index": 84,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
-      "answer_visible_in_state_card": true,
-      "scored_correct": true
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
     },
     {
       "index": 85,
@@ -637,7 +642,7 @@
     },
     {
       "index": 87,
-      "stage": "lost_at_candidate_selection",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
       "answer_visible_in_state_card": false,
       "scored_correct": false
@@ -658,10 +663,10 @@
     },
     {
       "index": 90,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
-      "answer_visible_in_state_card": true,
-      "scored_correct": false
+      "answer_visible_in_state_card": false,
+      "scored_correct": true
     },
     {
       "index": 91,
@@ -672,10 +677,10 @@
     },
     {
       "index": 92,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
-      "answer_visible_in_state_card": true,
-      "scored_correct": true
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
     },
     {
       "index": 93,
@@ -693,10 +698,10 @@
     },
     {
       "index": 95,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
-      "answer_visible_in_state_card": true,
-      "scored_correct": true
+      "answer_visible_in_state_card": false,
+      "scored_correct": false
     },
     {
       "index": 96,
@@ -714,7 +719,7 @@
     },
     {
       "index": 98,
-      "stage": "answer_visible_in_state_card",
+      "stage": "not_in_retrieval_candidates",
       "matching_mode": "normalized_answer_text_only",
       "answer_visible_in_state_card": true,
       "scored_correct": true
@@ -726,10 +731,5 @@
       "answer_visible_in_state_card": false,
       "scored_correct": false
     }
-  ],
-  "limitations": [
-    "Literal answer-text presence is not proof of a complete, correctly connected evidence chain.",
-    "Paraphrases and answer-model prior knowledge can evade this classifier.",
-    "No source-fact-ID proof is published; this is post-answer triage only."
   ]
 }

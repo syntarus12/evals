@@ -1,0 +1,38 @@
+{
+  "scope": "Experimental paired 100-question MH-only replay; not the headline benchmark.",
+  "run_started_at_utc": "2026-09-29T17:23:09.950043+00:00",
+  "production_build": "2bd676e8028a19e3025ea0b81f1f9daf52063cfd",
+  "model": "glm5.3@v2",
+  "source_artifact_sha256": "acc61d84fd2292049b8d3ed87b5c8fcf12e2373c1cad33d6402f1715a18e9b74",
+  "status": "complete_with_failures",
+  "harness_certified_flag": false,
+  "retained_corpus": true,
+  "new_ingest_writes": 0,
+  "pairing": "Same 100 questions; alternating arm order; no ingestion between arms.",
+  "answer_temperature": 0,
+  "answer_transport_retries": 0,
+  "resolve_retry_policy": "Up to 2 retries for transient failures, identical across arms.",
+  "top_k": 10,
+  "max_claims": 8,
+  "second_hop_top_k": 5,
+  "arm_descriptions": {
+    "control": "Default resolver",
+    "chain_canary": "Opt-in bounded chain-retrieval canary"
+  },
+  "results": {
+    "control": {
+      "correct": 57,
+      "total": 100,
+      "accuracy": 0.57,
+      "failed_requests": 0
+    },
+    "chain_canary": {
+      "correct": 34,
+      "total": 100,
+      "accuracy": 0.34,
+      "failed_requests": 1
+    }
+  },
+  "interpretation": "The canary regressed from 57/100 to 34/100; one canary failure remains in the 100-question denominator. This variant is not selected as an improvement.",
+  "verification": "Offline rescore against locked MH gold; both arms include every question exactly once."
+}

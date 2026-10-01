@@ -1,8 +1,8 @@
 {
   "benchmark": "MemoryAgentBench FactConsolidation official 32K SH + MH",
-  "run_started_at_utc": "2026-09-28T10:19:45+00:00",
+  "run_started_at_utc": "2026-09-28T10:00:05+00:00",
   "status": "complete",
-  "harness_certified_flag": true,
+  "harness_certified_flag": false,
   "certification_semantics": "Recorded harness completeness flag, not independent certification or a vendor-neutral rank.",
   "scope": "Continuum-only retained-corpus public-API replay; no competitor or search arm.",
   "production_build": "cb093372018957b672cd5d08f34d60a33ae3fe00",
@@ -39,10 +39,10 @@
   "results": {
     "continuum": {
       "overall": {
-        "correct": 152,
+        "correct": 153,
         "total": 200,
-        "accuracy": 0.76,
-        "failed_requests": 0
+        "accuracy": 0.765,
+        "failed_requests": 1
       },
       "single_hop": {
         "correct": 95,
@@ -51,66 +51,66 @@
         "failed_requests": 0
       },
       "multi_hop": {
-        "correct": 57,
+        "correct": 58,
         "total": 100,
-        "accuracy": 0.57,
-        "failed_requests": 0
+        "accuracy": 0.58,
+        "failed_requests": 1
       }
     }
   },
   "latency_ms": {
     "answer_attempt": {
       "count": 200,
-      "mean_ms": 1592.93,
-      "p50_ms": 933,
-      "p95_ms": 4937,
-      "p99_ms": 9981,
-      "max_ms": 11085
+      "mean_ms": 2703.95,
+      "p50_ms": 830,
+      "p95_ms": 5784,
+      "p99_ms": 54355,
+      "max_ms": 93756
     },
     "resolver_compute": {
       "count": 200,
-      "mean_ms": 27.25,
-      "p50_ms": 21.51,
-      "p95_ms": 67.4,
-      "p99_ms": 108.64,
-      "max_ms": 284.91
+      "mean_ms": 27.12,
+      "p50_ms": 20.91,
+      "p95_ms": 68.27,
+      "p99_ms": 107.56,
+      "max_ms": 292.08
     },
     "retrieval_server": {
       "count": 200,
-      "mean_ms": 586.03,
-      "p50_ms": 530,
-      "p95_ms": 1009,
-      "p99_ms": 1188,
-      "max_ms": 1264
+      "mean_ms": 576.58,
+      "p50_ms": 523,
+      "p95_ms": 1052,
+      "p99_ms": 1201,
+      "max_ms": 1267
     },
     "server_total": {
       "count": 200,
-      "mean_ms": 1057.48,
-      "p50_ms": 644.72,
-      "p95_ms": 2533.68,
-      "p99_ms": 3164.27,
-      "max_ms": 3931.93
+      "mean_ms": 1060.29,
+      "p50_ms": 635.16,
+      "p95_ms": 2594.46,
+      "p99_ms": 3242.54,
+      "max_ms": 3349.39
     },
     "api_round_trip": {
       "count": 200,
-      "mean_ms": 1351.58,
-      "p50_ms": 959,
-      "p95_ms": 2865,
-      "p99_ms": 3486,
-      "max_ms": 4285
+      "mean_ms": 1366.89,
+      "p50_ms": 915,
+      "p95_ms": 2893,
+      "p99_ms": 3570,
+      "max_ms": 4043
     },
     "question_end_to_end": {
       "count": 200,
-      "mean_ms": 2944.61,
-      "p50_ms": 2565,
-      "p95_ms": 6385,
-      "p99_ms": 10822,
-      "max_ms": 12422
+      "mean_ms": 4070.99,
+      "p50_ms": 2071,
+      "p95_ms": 7418,
+      "p99_ms": 55699,
+      "max_ms": 95657
     }
   },
-  "reported_elapsed_seconds": 693.6,
+  "reported_elapsed_seconds": 918.4,
   "elapsed_scope": "Reported final scoring invocation duration; resumed artifacts do not establish total wall time including earlier invocations, pauses, preflights or ingestion.",
-  "source_artifact_sha256": "63db06ec5b8d336058703b5f0846d0751e42f8e30459489e1b11370dc4fc13fc",
+  "source_artifact_sha256": "55424db95472c769fbd490b6f3b4d1cd66daa1fad50531dbd8395923173dfb44",
   "verification": {
     "performed_offline": true,
     "verified_at_utc_date": "2026-10-01",

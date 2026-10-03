@@ -18,7 +18,7 @@ Run: **September 28, 2026**. Offline artifact verification: **October 1, 2026**.
 
 Continuum's verified replication is **95% SH / 57% MH / 76% overall**. The earlier **97% / 43% / 70%** publication remains historical, not the current headline. The offline verifier now checks this headline table as well as the underlying predictions and summaries.
 
-The chart uses only the **32K FactCon** columns from MemoryAgentBench v3, Tables 5 and 10. Paper bars are published reference results, **not our reruns or a same-model A/B**; Mem0 and Cognee denote the paper's configurations, not today's hosted APIs. Continuum used GLM 5.3 and a retained-corpus API replay. [Exact chart data and sources](assets/FACTCON_32K_SOURCES.md) · [Copy-ready X thread](X_THREAD.md).
+The chart uses only the **32K FactCon** columns from MemoryAgentBench v3, Tables 5 and 10. Paper bars are published reference results, **not our reruns or a same-model A/B**; Mem0 and Cognee denote the paper's configurations, not today's hosted APIs. Continuum used GLM 5.3 and a retained-corpus API replay. [Exact chart data and sources](assets/FACTCON_32K_SOURCES.md).
 
 To regenerate the image (optional; offline verification still needs no dependencies):
 

@@ -1,7 +1,6 @@
 import json
 from pathlib import Path
 import shutil
-import re
 import sys
 import tempfile
 import unittest
@@ -14,15 +13,6 @@ from verify_result_artifacts import verify_publication
 class PublicationTests(unittest.TestCase):
     def test_current_publication_matches(self):
         verify_publication(ROOT)
-
-    def test_thread_has_six_standard_length_posts(self):
-        text = (ROOT / "X_THREAD.md").read_text(encoding="utf-8")
-        posts = re.findall(r"(?ms)^## (\d+)\n\n(.*?)(?=^## |\Z)", text)
-        self.assertEqual([number for number, _ in posts], [str(i) for i in range(1, 7)])
-        for number, post in posts:
-            post = re.sub(r"https?://\S+", "x" * 23, post.strip())
-            weighted_length = sum(2 if ord(char) > 0x10FF else 1 for char in post)
-            self.assertLessEqual(weighted_length, 280, f"Post {number} exceeds standard X limit")
 
     def snapshot(self, root):
         for name in ("README.md", "results/factconsolidation_summary.json", "assets/factcon_32k_comparison.json"):

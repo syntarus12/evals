@@ -1,4 +1,4 @@
-# Syntarus Continuum — FactConsolidation evaluation
+# Continuum — FactConsolidation evaluation
 
 This repository publishes an auditable Continuum-only live production API evaluation on the official FactConsolidation 32K Single-Hop (SH) and Multi-Hop (MH) subsets from [MemoryAgentBench](https://github.com/HUST-AI-HYZ/MemoryAgentBench).
 
@@ -11,6 +11,21 @@ Run: **September 28, 2026**. Offline artifact verification: **October 1, 2026**.
 | Single-Hop (SH) | 95 | 100 | **95%** |
 | Multi-Hop (MH) | 57 | 100 | **57%** |
 | Overall | 152 | 200 | **76%** |
+
+### 32K paper-reference comparison
+
+![Continuum and published MemoryAgentBench 32K reference scores](assets/continuum-factcon-32k.png)
+
+Continuum's verified replication is **95% SH / 57% MH / 76% overall**. The earlier **97% / 43% / 70%** publication remains historical, not the current headline. The offline verifier now checks this headline table as well as the underlying predictions and summaries.
+
+The chart uses only the **32K FactCon** columns from MemoryAgentBench v3, Tables 5 and 10. Paper bars are published reference results, **not our reruns or a same-model A/B**; Mem0 and Cognee denote the paper's configurations, not today's hosted APIs. Continuum used GLM 5.3 and a retained-corpus API replay. [Exact chart data and sources](assets/FACTCON_32K_SOURCES.md) · [Copy-ready X thread](X_THREAD.md).
+
+To regenerate the image (optional; offline verification still needs no dependencies):
+
+```bash
+python -m pip install -r requirements-figures.txt
+python -B scripts/render_factcon_32k.py
+```
 
 All 200 official questions appear exactly once. The replication records **zero failed question requests**, one answer attempt per retained question, and no recorded answer retries. Scores were independently recomputed from the checksum-locked official answers instead of trusted from stored flags or embedded gold. GLM 5.3 through Sarvam v2 was the answerer (temperature 0, 512-token budget); scoring is official normalized substring exact match (SubEM), **not an LLM judge**.
 

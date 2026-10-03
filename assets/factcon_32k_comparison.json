@@ -1,0 +1,16 @@
+{
+  "context": "32K",
+  "metric": "SubEM accuracy (%)",
+  "paper": "https://arxiv.org/html/2507.05257v3",
+  "continuum_summary": "results/factconsolidation_summary.json",
+  "baselines": [
+    {"name": "GPT-4o", "sh": 88, "mh": 10, "table": 10},
+    {"name": "o4-mini", "sh": 61, "mh": 14, "table": 5},
+    {"name": "GPT-4o-mini", "sh": 63, "mh": 10, "table": 10},
+    {"name": "GPT-4.1-mini", "sh": 82, "mh": 7, "table": 10},
+    {"name": "Gemini-2.0-Flash", "sh": 49, "mh": 7, "table": 10},
+    {"name": "Claude-3.7-Sonnet", "sh": 46, "mh": 2, "table": 10},
+    {"name": "Mem0 (paper setup)", "sh": 22, "mh": 3, "table": 10},
+    {"name": "Cognee (paper setup)", "sh": 39, "mh": 4, "table": 10}
+  ]
+}

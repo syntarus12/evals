@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 from pathlib import Path
 
 from score_factconsolidation import load_locked_gold, score_records, score_subem
@@ -73,6 +74,29 @@ def verify_entry(root, entry, gold, questions):
     return {"label": entry["label"], **computed}
 
 
+def verify_publication(root=ROOT):
+    """Prevent the current README and chart configuration drifting from the result."""
+    result = load(root / "results/factconsolidation_summary.json")["results"]["continuum"]
+    readme = (root / "README.md").read_text(encoding="utf-8")
+    headline = readme.split("## Latest verified full replication", 1)[1].split("###", 1)[0]
+    for label, key in (("Single-Hop (SH)", "single_hop"), ("Multi-Hop (MH)", "multi_hop"), ("Overall", "overall")):
+        matches = re.findall(r"^\| " + re.escape(label) + r" \| (\d+) \| (\d+) \| \*\*([\d.]+)%\*\* \|$", headline, re.M)
+        stats = result[key]
+        expected = (str(stats["correct"]), str(stats["total"]), f"{stats['accuracy'] * 100:g}")
+        if matches != [expected]:
+            raise ValueError("Current README headline disagrees with verified scores")
+    chart = load(root / "assets/factcon_32k_comparison.json")
+    if chart["context"] != "32K" or chart["continuum_summary"] != "results/factconsolidation_summary.json":
+        raise ValueError("Chart must use 32K and the verified replication summary")
+    expected = [("GPT-4o", 88, 10, 10), ("o4-mini", 61, 14, 5), ("GPT-4o-mini", 63, 10, 10),
+                ("GPT-4.1-mini", 82, 7, 10), ("Gemini-2.0-Flash", 49, 7, 10),
+                ("Claude-3.7-Sonnet", 46, 2, 10), ("Mem0 (paper setup)", 22, 3, 10),
+                ("Cognee (paper setup)", 39, 4, 10)]
+    actual = [(r["name"], r["sh"], r["mh"], r["table"]) for r in chart["baselines"]]
+    if actual != expected or chart["paper"] != "https://arxiv.org/html/2507.05257v3":
+        raise ValueError("Chart references disagree with the checked 32K paper values")
+
+
 def verify_all(root=ROOT):
     lock_path = root / "fixtures/BENCHMARK_LOCK.json"
     gold = load_locked_gold(lock_path)
@@ -88,7 +112,9 @@ def verify_all(root=ROOT):
         raise ValueError("Manifest must cover the five published result sets")
     if len({entry["predictions"] for entry in entries}) != len(entries):
         raise ValueError("Duplicate manifest result file")
-    return [verify_entry(root, entry, gold, questions) for entry in entries]
+    results = [verify_entry(root, entry, gold, questions) for entry in entries]
+    verify_publication(root)
+    return results
 
 
 if __name__ == "__main__":
